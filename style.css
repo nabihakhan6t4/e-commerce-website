@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "hevetica-bold";
+  src: url(FONTS/Helvetica-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-header-color,
+.custom-hero-color {
+  font-family: "hevetica-bold";
+  background: linear-gradient(to right, #03012e, #01c7f6);
+}
+.custom-color {
+  color: #eab73e;
+}
+.btn-custom {
+  color: black !important;
+  background: #eab73e !important;
+}
+
+.btn-custom:hover {
+  background: #000 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
