@@ -26,9 +26,9 @@
     <!-- header-start -->
     <nav class="navbar custom-header-color" aria-label="Light offcanvas navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><img src="images/logo.png" alt=""
-        /></a>
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="Logo" />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -77,9 +77,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Action</a></li>
                   <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
+                  <li><hr class="dropdown-divider" /></li>
                   <li>
                     <a class="dropdown-item" href="#">Something else here</a>
                   </li>
@@ -102,6 +100,7 @@
       </div>
     </nav>
     <!-- header-end -->
+
     <!-- hero-section-start -->
     <div class="container-fluid col-xxl-12 px-4 py-5 custom-hero-color">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -130,64 +129,108 @@
             <p>RTL</p>
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-custom btn-lg px-4 p-3">
+            <a
+              href="#home-demo"
+              type="button"
+              class="btn btn-custom btn-lg px-4 p-3"
+            >
               View Demo <i class="fa-solid fa-arrow-down"></i>
-            </button>
+            </a>
           </div>
         </div>
       </div>
     </div>
     <!-- hero-section-end -->
+
     <!-- card-section-start -->
     <div
-      class="container mt-5 d-flex align-items-center justify-content-center gap-5 text-center"
+      class="container-fluid p-5 d-flex align-items-center justify-content-center gap-5 text-center custom-card-color"
     >
-      <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
+      <div class="card border-0 custom-shadow" style="width: 18rem">
+        <img
+          src="images/High-volume Stores.svg"
+          class="card-img-top"
+          alt="High-volume Stores"
+        />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">High-volume Stores</h5>
         </div>
       </div>
-      <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
+      <div class="card border-0 custom-shadow" style="width: 18rem">
+        <img
+          src="images/SEO-Friendly.svg"
+          class="card-img-top"
+          alt="SEO-Friendly"
+        />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">SEO-Friendly</h5>
         </div>
       </div>
-      <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
+      <div class="card border-0 custom-shadow" style="width: 18rem">
+        <img
+          src="images/Trust Badges.svg"
+          class="card-img-top"
+          alt="Trust Badges"
+        />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title text-dark">Trust Badges</h5>
         </div>
       </div>
-      <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
+      <div class="card border-0 custom-shadow" style="width: 18rem">
+        <img
+          src="images/Multi Language & Currency.svg"
+          class="card-img-top"
+          alt="Multi Language & Currency"
+        />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Multi Language & Currency</h5>
         </div>
       </div>
     </div>
-    <!-- hero-section-end -->
+    <!-- card-section-end -->
+
+    <!-- demo-section-start -->
+    <div
+      class="container-fluid d-flex justify-content-center align-items-center"
+    >
+      <div class="row">
+        <div class="col-4">
+          <div
+            class="card card-animation pic1 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page1.html'"
+          >
+            <div class="card-body">
+              <h5 class="card-title">High-volume Stores</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div
+            class="card card-animation pic2 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page2.html'"
+          >
+            <div class="card-body">
+              <h5 class="card-title">SEO-Friendly</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div
+            class="card card-animation pic3 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          >
+            <div class="card-body">
+              <h5 class="card-title">Trust Badges</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- demo-section-end -->
+
     <!-- typed -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <!-- bootstrap-js -->

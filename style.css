@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "hevetica-bold";
+  font-family: "Helvetica-Bold";
   src: url(FONTS/Helvetica-Bold.ttf);
 }
 
@@ -11,12 +11,14 @@
 
 .custom-header-color,
 .custom-hero-color {
-  font-family: "hevetica-bold";
+  font-family: "Helvetica-Bold";
   background: linear-gradient(to right, #03012e, #01c7f6);
 }
+
 .custom-color {
   color: #eab73e;
 }
+
 .btn-custom {
   color: black !important;
   background: #eab73e !important;
@@ -26,4 +28,37 @@
   background: #000 !important;
   color: white !important;
   border: 1px solid white !important;
+}
+
+.custom-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-shadow:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px;
+  transform: translateY(-10px);
+}
+
+.card-animation {
+  background-position: center;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.pic1 {
+  background: url(images/fashion1.jpg);
+}
+
+.pic2 {
+  background: url(images/fashion2.jpg);
+}
+
+.pic3 {
+  background: url(images/fashion3.jpg);
+}
+
+.card-animation:hover {
+  background-position: bottom;
+  cursor: pointer;
 }
