@@ -41,11 +41,27 @@
 }
 
 .card-animation {
-  background-position: center;
+  height: 300px;
+  width: 100%;
   background-size: cover;
-  transition: all 0.2s ease-in-out;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: top;
+  transition: all 2s ease-in-out;
+}
+h1,
+p {
+  line-height: 1.5;
+  letter-spacing: 0.5px;
 }
 
+.custom-w {
+  width: 80vw;
+}
+.card-1 {
+  height: 67vh !important;
+}
 .pic1 {
   background: url(images/fashion1.jpg);
 }
@@ -55,10 +71,102 @@
 }
 
 .pic3 {
-  background: url(images/fashion3.jpg);
+  background: url(images/fashion-3.jpg);
 }
 
+.pic4 {
+  background: url(images/fashion-4.jpg);
+}
+
+.pic5 {
+  background: url(images/fashion-5.jpg);
+}
+
+.pic6 {
+  background: url(images/fashion-6.jpg);
+}
+.pic7 {
+  background: url(images/cosmetic.jpg);
+}
+
+.pic8 {
+  background: url(images/Jewelry.jpg);
+}
+.pic9 {
+  background: url(images/t-shirt-1.jpg);
+}
+
+.pic10 {
+  background: url(images/dark.jpg);
+}
+.pic11 {
+  background: url(images/rtl.jpg);
+}
+.pic12 {
+  background: url(images/demos-coming.jpg);
+}
 .card-animation:hover {
   background-position: bottom;
   cursor: pointer;
+}
+.custom-hover-effect:hover {
+  color: #eab73e;
+  cursor: pointer;
+}
+
+.custom-hover-effect i:hover {
+  color: #eab73e;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .custom-w {
+    width: 100%;
+  }
+}
+
+.custom-border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.custom-shadow-demo {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px;
+}
+
+.spacer {
+  height: 800px;
+}
+.marquee {
+  position: relative;
+  padding: 30px 0;
+  font-weight: 600;
+  font-size: 40px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.marquee__inner {
+  display: flex;
+  width: fit-content;
+  flex: auto;
+  flex-direction: row;
+}
+.marquee__part {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0px 4px;
+}
+.arrow {
+  width: 60px;
+  height: 80px;
+  margin: 0 1em;
+  transform: rotate(90edg);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.arrow.active {
+  transform: rotate(-90edg);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

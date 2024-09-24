@@ -40,14 +40,14 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
-          class="offcanvas offcanvas-end"
+          class="offcanvas offcanvas-end custom-header-color"
           tabindex="-1"
           id="offcanvasNavbarLight"
           aria-labelledby="offcanvasNavbarLightLabel"
         >
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">
-              Offcanvas
+              <img src="images/logo.png" alt="" />
             </h5>
             <button
               type="button"
@@ -59,14 +59,19 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Demo</a>
+                <a
+                  class="nav-link active text-white fs-4"
+                  aria-current="page"
+                  href="#"
+                  >Demo</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link text-white fs-4" href="#">Link</a>
               </li>
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle text-white fs-4"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -113,9 +118,13 @@
           />
         </div>
         <div class="col-lg-6 typewriter">
-          <h1 class="display-5 fw-bold text-white lh-1 mb-3 fs-1">
-            The <span class="auto-type"></span>
+          <h1
+            class="display-5 fw-bold text-white lh-1 mb-3 fs-1"
+            id="hero-title"
+          >
+            The <span class="auto-type" aria-label="features"></span>
           </h1>
+
           <p class="lead custom-color fs-1 fw-bold">
             Minimalist Multipurpose Shopify Theme OS 2.0
           </p>
@@ -129,11 +138,7 @@
             <p>RTL</p>
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a
-              href="#home-demo"
-              type="button"
-              class="btn btn-custom btn-lg px-4 p-3"
-            >
+            <a href="demo" type="button" class="btn btn-custom btn-lg px-4 p-3">
               View Demo <i class="fa-solid fa-arrow-down"></i>
             </a>
           </div>
@@ -190,47 +195,249 @@
     <!-- card-section-end -->
 
     <!-- demo-section-start -->
+    <div class="mt-5 text-center text-black pt-5" id="demo">
+      <h1>Home Demos</h1>
+      <p class="mt-3 fs-5">
+        9+ Modern Homepage & Unique Design. Build an Exclusive
+        <span class="fw-bold"> Drag and Drop</span> Store with
+        <span class="fw-bold">Minimalin</span>
+      </p>
+    </div>
     <div
-      class="container-fluid d-flex justify-content-center align-items-center"
+      class="container-fluid col-xxl-12 px-4 py-5 d-flex justify-content-around align-items-center"
     >
-      <div class="row">
-        <div class="col-4">
+      <div
+        class="row custom-w d-flex justify-content-between align-items-center"
+      >
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
           <div
-            class="card card-animation pic1 w-100"
+            class="card-1 card-animation pic1 w-100"
             style="height: 300px"
             onclick="window.location.href='page1.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around custom-border p-3 custom-hover-effect fs-5 mt-3 align-items-center"
           >
-            <div class="card-body">
-              <h5 class="card-title">High-volume Stores</h5>
-            </div>
+            <h5 class="card-title">Fashion-1</h5>
+            <a href="page1.html" class="custom-hover-effect">
+              <i
+                class="fa-solid text-secondary fs-5 fa-arrow-up-right-from-square"
+              ></i>
+            </a>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
           <div
-            class="card card-animation pic2 w-100"
+            class="card-1 card-animation pic2 w-100"
             style="height: 300px"
             onclick="window.location.href='page2.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around custom-border p-3 custom-hover-effect fs-5 mt-3 align-items-center"
           >
-            <div class="card-body">
-              <h5 class="card-title">SEO-Friendly</h5>
-            </div>
+            <h5 class="card-title">Fashion-2</h5>
+            <a href="page2.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
           <div
-            class="card card-animation pic3 w-100"
+            class="card-1 card-animation pic3 w-100"
             style="height: 300px"
             onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around custom-border p-3 custom-hover-effect fs-5 mt-3 align-items-center"
           >
-            <div class="card-body">
-              <h5 class="card-title">Trust Badges</h5>
-            </div>
+            <h5 class="card-title">Fashion 3</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div
+            class="card-1 card-animation pic4 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around custom-border p-3 custom-hover-effect fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">Electronics</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div
+            class="card-1 card-animation pic5 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around p-3 custom-border custom-hover-effect fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">Single Product</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div
+            class="card-1 card-animation pic6 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around p-3 custom-border custom-hover-effect fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">Animation</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div
+            class="card-1 card-animation pic7 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around p-3 custom-border custom-hover-effect fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">Beauty & Cosmetic</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div
+            class="card-1 card-animation pic8 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around p-3 custom-border custom-hover-effect fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">Jewelry</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div
+            class="card-1 card-animation pic9 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around p-3 custom-border custom-hover-effect fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">T-Shirt</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div
+            class="card-1 card-animation pic10 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around p-3 custom-border custom-hover-effect fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">Dark</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div
+            class="card-1 card-animation pic11 w-100"
+            style="height: 300px"
+            onclick="window.location.href='page3.html'"
+          ></div>
+          <div
+            class="card-body d-flex justify-content-around p-3 custom-border custom-hover-effect fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">RTL</h5>
+            <a href="page3.html" class="custom-hover-effect">
+              <i
+                class="fa-solid fs-5 text-secondary fa-arrow-up-right-from-square"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 col-md-6 mt-5 custom-shadow-demo">
+          <div class="card-1 pic12 w-100" style="height: 300px"></div>
+          <div
+            class="card-body d-flex justify-content-center p-3 custom-hover-effect custom-border fs-5 mt-3 align-items-center"
+          >
+            <h5 class="card-title">Coming Soon</h5>
+            <a href="" class="custom-hover-effect"> </a>
           </div>
         </div>
       </div>
     </div>
     <!-- demo-section-end -->
 
+    <!-- marque-section-start -->
+    <section class="spacer"></section>
+    <section class="marquee">
+      <div class="marquee__inner">
+        <div class="marquee__part">Home and decor</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Jewelry and accessories</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Electronics</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Food and drink</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Pet supplies</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Health and beauty</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Hardware and automotive</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Baby and kids</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Books</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Sports and recreation</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="marquee__part">Arts and crafts</div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      </div>
+    </section>
+    <!-- marque-section-end -->
     <!-- typed -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <!-- bootstrap-js -->
