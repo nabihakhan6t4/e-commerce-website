@@ -3,12 +3,14 @@
   src: url(FONTS/Helvetica-Bold.ttf);
 }
 
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Custom Header and Hero Color */
 .custom-header-color,
 .custom-hero-color {
   font-family: "Helvetica-Bold";
@@ -30,6 +32,7 @@
   border: 1px solid white !important;
 }
 
+/* Shadow Effect */
 .custom-shadow {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
   transition: all 0.3s ease-in-out;
@@ -40,16 +43,22 @@
   transform: translateY(-10px);
 }
 
+/* Card Animation */
 .card-animation {
   height: 300px;
   width: 100%;
   background-size: cover;
-
   background-position: center;
   background-repeat: no-repeat;
-  background-position: top;
   transition: all 2s ease-in-out;
 }
+
+.card-animation:hover {
+  background-position: bottom; /* Make sure this works with your images */
+  cursor: pointer;
+}
+
+/* Text Styles */
 h1,
 p {
   line-height: 1.5;
@@ -59,43 +68,39 @@ p {
 .custom-w {
   width: 80vw;
 }
+
 .card-1 {
   height: 67vh !important;
 }
+
+/* Background Images */
 .pic1 {
   background: url(images/fashion1.jpg);
 }
-
 .pic2 {
   background: url(images/fashion2.jpg);
 }
-
 .pic3 {
   background: url(images/fashion-3.jpg);
 }
-
 .pic4 {
   background: url(images/fashion-4.jpg);
 }
-
 .pic5 {
   background: url(images/fashion-5.jpg);
 }
-
 .pic6 {
   background: url(images/fashion-6.jpg);
 }
 .pic7 {
   background: url(images/cosmetic.jpg);
 }
-
 .pic8 {
   background: url(images/Jewelry.jpg);
 }
 .pic9 {
   background: url(images/t-shirt-1.jpg);
 }
-
 .pic10 {
   background: url(images/dark.jpg);
 }
@@ -105,10 +110,8 @@ p {
 .pic12 {
   background: url(images/demos-coming.jpg);
 }
-.card-animation:hover {
-  background-position: bottom;
-  cursor: pointer;
-}
+
+/* Hover Effects */
 .custom-hover-effect:hover {
   color: #eab73e;
   cursor: pointer;
@@ -119,54 +122,106 @@ p {
   cursor: pointer;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
   .custom-w {
     width: 100%;
   }
 }
 
+/* Borders */
 .custom-border {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .custom-shadow-demo {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px;
 }
 
-.spacer {
-  height: 800px;
-}
+/* Marquee Styles */
 .marquee {
   position: relative;
-  padding: 30px 0;
   font-weight: 600;
   font-size: 40px;
-  text-transform: uppercase;
   overflow: hidden;
 }
 
 .marquee__inner {
   display: flex;
-  width: fit-content;
-  flex: auto;
   flex-direction: row;
+  justify-content: center;
 }
+
 .marquee__part {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  padding: 0px 4px;
-}
-.arrow {
-  width: 60px;
-  height: 80px;
-  margin: 0 1em;
-  transform: rotate(90edg);
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  padding: 0 10px; /* Increased padding for more space */
+  white-space: nowrap;
 }
 
-.arrow.active {
-  transform: rotate(-90edg);
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom-card-color {
+  background: #ebebeb;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+body {
+  animation: appear 3s ease-in-out; /* Adjust duration and easing */
+}
+
+/* custom-scrollbar */
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #d1e5ff;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#03012e, #01c7f6);
+  border-radius: 10px;
+}
+.cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #01c7f6;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none; /* Prevent the cursor from blocking mouse events */
+  transform: translate(-50%, -50%); /* Center the cursor */
+  transition: background-color 0.2s; /* Smooth color change on hover */
+}
+
+.cursor2 {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #01c7f6; /* Small inner cursor color */
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none; /* Prevent the cursor from blocking mouse events */
+  transform: translate(-50%, -50%); /* Center the cursor */
+}
+
+body {
+  cursor: none; /* Hide the default cursor */
 }
