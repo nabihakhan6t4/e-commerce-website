@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: auto;
 }
 
 /* Custom Header and Hero Color */
@@ -110,7 +111,33 @@ p {
 .pic12 {
   background: url(images/demos-coming.jpg);
 }
+.pic13 {
+  background: url(images/Collection\ All\ -\ Shop.jpg);
+}
+.pic14 {
+  background: url(images/filter-drawer.jpg);
+}
+.pic15 {
+  background: url(images/collection-list.jpg);
+}
+.pic16 {
+  background: url(images/collection-specific.jpg);
+}
+.pic17 {
+  background: url(images/product-details.jpg);
+}
+.pic18 {
+  background: url(images/cart.jpg);
+}
+.pic19 {
+  background: url(images/wishlist.jpg);
+}
+.pic20 {
+  background: url(images/blog.jpg);
+}
+.pic21 {
 
+}
 /* Hover Effects */
 .custom-hover-effect:hover {
   color: #eab73e;
@@ -124,6 +151,11 @@ p {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .custom-w {
+    width: 100%;
+  }
+}
+@media (max-width: 667px) {
   .custom-w {
     width: 100%;
   }
@@ -224,4 +256,36 @@ body {
 
 body {
   cursor: none; /* Hide the default cursor */
+}
+
+.card-img-top {
+  height: 150px; /* Set a height for the image */
+  object-fit: cover; /* This ensures the image covers the space nicely */
+}
+.card {
+  flex: 0 0 auto; /* Ensure cards don't grow/shrink */
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem; /* Adjust space between rows */
+}
+
+.row {
+  flex-wrap: wrap; /* Allow wrapping of cards */
+}
+
+@media (min-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 25%; /* Each column takes up 25% width */
+    max-width: 25%; /* Ensure no more than 4 cards per row */
+  }
+}
+.card-img-top {
+  height: 200px; /* Set a specific height */
+  width: 100%; /* Ensure the image takes full width */
+  object-fit: contain; /* Change to contain to ensure the whole image is visible */
+}
+
+.card {
+  height: auto; /* Allow the card height to adjust based on content */
 }
