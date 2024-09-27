@@ -56,3 +56,4 @@ document.addEventListener("mouseover", function() {
 document.addEventListener("mouseout", function() {
   cursor.style.backgroundColor = "transparent"; // Reset color when not hovering
 });
+
