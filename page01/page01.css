@@ -1,0 +1,39 @@
+.custom-font-size {
+    font-size: 10px;
+}
+
+.dropdown-menu {
+    width: 200px; /* Set a width that fits your design */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 0; /* Remove extra padding */
+}
+
+.dropdown-item {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+    padding: 5px 10px; /* Adjust padding for compactness */
+    margin: 0; /* Remove margin */
+}
+
+h5 {
+    margin: 5px 0; /* Adjust heading margin */
+    padding: 10px 0; /* Add padding to headings for spacing */
+}
+
+.custom-styling {
+    width: 15px; /* Set width */
+    color: black !important;
+    font-weight: bold;
+    font-size:large;
+    height: 15px; /* Set height */
+    background: blue; /* Background color */
+    border: 1px solid #fff; /* Border for visibility */
+    border-radius: 50%; /* Circular buttons */
+    margin: 0 5px; /* Space between buttons */
+    transition: background 0.3s; /* Transition effect for hover */
+}
+
+.custom-styling:hover {
+    background: lightblue; /* Change color on hover */
+}

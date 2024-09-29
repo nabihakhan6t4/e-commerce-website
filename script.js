@@ -50,10 +50,10 @@ document.addEventListener("mousemove", function (e) {
 });
 
 // Optional: Add hover effect
-document.addEventListener("mouseover", function() {
+document.addEventListener("mouseover", function () {
   cursor.style.backgroundColor = "transparent"; // Change color on hover
 });
-document.addEventListener("mouseout", function() {
+document.addEventListener("mouseout", function () {
   cursor.style.backgroundColor = "transparent"; // Reset color when not hovering
 });
 
