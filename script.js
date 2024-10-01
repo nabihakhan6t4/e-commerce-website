@@ -1,59 +1,56 @@
-// Typed.js animation
-var typed = new Typed(".auto-type", {
-  strings: [
-    "Fully Customizable ",
-    "High Converting",
-    "Next Generation",
-    "Fastest",
-    "Responsive",
-    "Clean & Modern",
-  ],
-  typeSpeed: 50,
-  backSpeed: 25,
-  loop: true,
-});
-
-// GSAP scrolling animation for marquee
-let arrows = document.querySelectorAll(".arrow");
-
-let tween = gsap.to(".marquee__inner", {
-  xPercent: -100,
-  repeat: -1,
-  duration: 20,
-  ease: "linear",
-});
-
-// Hide arrows on scroll
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    arrows.forEach((el) => (el.style.display = "none"));
+// Ensure DOM is fully loaded before running scripts
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if the .auto-type element exists for Typed.js animation
+  const autoTypeElement = document.querySelector(".auto-type");
+  if (autoTypeElement) {
+    var typed = new Typed(".auto-type", {
+      strings: [
+        "Fully Customizable ",
+        "High Converting",
+        "Next Generation",
+        "Fastest",
+        "Responsive",
+        "Clean & Modern",
+      ],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true,
+    });
   } else {
-    arrows.forEach((el) => (el.style.display = "flex"));
+    console.error(".auto-type element not found");
   }
-});
 
-// Initialize AOS
-AOS.init({
-  duration: 1200,
-  once: true,
-});
+  // Check if .marquee__inner exists for GSAP animation
+  const marqueeInnerElement = document.querySelector(".marquee__inner");
+  if (marqueeInnerElement) {
+    gsap.to(".marquee__inner", {
+      xPercent: -100,
+      repeat: -1,
+      duration: 20,
+      ease: "linear",
+    });
+  } else {
+    console.error(".marquee__inner element not found");
+  }
 
-var cursor = document.querySelector(".cursor");
-var cursor2 = document.querySelector(".cursor2");
+  // Hide arrows on scroll
+  const arrows = document.querySelectorAll(".arrow");
+  window.addEventListener("scroll", () => {
+    arrows.forEach(
+      (el) => (el.style.display = window.scrollY > 100 ? "none" : "flex")
+    );
+  });
 
-document.addEventListener("mousemove", function (e) {
-  // Update cursor position
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-  cursor2.style.left = e.clientX + "px";
-  cursor2.style.top = e.clientY + "px";
-});
+  // Cursor animation
+  const cursor = document.querySelector(".cursor");
+  const cursor2 = document.querySelector(".cursor2");
 
-// Optional: Add hover effect
-document.addEventListener("mouseover", function () {
-  cursor.style.backgroundColor = "transparent"; // Change color on hover
-});
-document.addEventListener("mouseout", function () {
-  cursor.style.backgroundColor = "transparent"; // Reset color when not hovering
-});
+  document.addEventListener("mousemove", function (e) {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+    cursor2.style.left = e.clientX + "px";
+    cursor2.style.top = e.clientY + "px";
+  });
 
+
+})

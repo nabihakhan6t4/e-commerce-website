@@ -129,7 +129,7 @@ p {
   background: url(images/wishlist.jpg);
 }
 .pic20 {
-  background: url(images/blog\\(2\).jpg);
+  background: url(images/blog-two.jpg);
 }
 .pic21 {
   background: url(images/blog-details.jpg);
@@ -218,7 +218,7 @@ p {
   }
 }
 body {
-  animation: appear 3s ease-in-out; /* Adjust duration and easing */
+  /* animation: appear 3s ease-in-out; Adjust duration and easing */
 }
 /* custom-scrollbar */
 ::-webkit-scrollbar {
@@ -235,7 +235,7 @@ body {
   width: 60px;
   height: 80px;
   margin: 0 1em;
-  transform: rotate(90edg);
+  transform: rotate(-90deg);
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .cursor {
@@ -274,8 +274,10 @@ body {
   overflow-x: hidden; /* Hide horizontal overflow */
 }
 .card {
-  max-width: 300px; /* Allow flexibility */
-  width: 100%; /* Full width within its container */
+  max-width: 300px; /* Pick one consistent width */
+  height: auto; /* Allow height to adjust dynamically */
+  width: 100%; /* Make it responsive */
+  margin: 10px; /* Add spacing between cards */
 }
 img {
   max-width: 100%; /* Make images responsive */
@@ -287,8 +289,10 @@ img {
   overflow-x: hidden; /* Hide any horizontal overflow */
 }
 .card {
-  margin: 0; /* Reset margins */
-  padding: 10px; /* Use padding for spacing instead */
+  max-width: 300px; /* Pick one consistent width */
+  height: auto; /* Allow height to adjust dynamically */
+  width: 100%; /* Make it responsive */
+  margin: 10px; /* Add spacing between cards */
 }
 html {
   overflow-y: scroll; /* Ensure vertical scrollbar is always visible */
@@ -312,6 +316,11 @@ body {
   max-width: 300px; /* Ensure a maximum width */
   margin: 10px; /* Spacing between cards */
   box-sizing: border-box; /* Include padding/border in width/height */
+
+  max-width: 300px; /* Pick one consistent width */
+  height: auto; /* Allow height to adjust dynamically */
+  width: 100%; /* Make it responsive */
+  margin: 10px; /* Add spacing between cards */
 }
 
 /* Responsive Image */
@@ -321,10 +330,10 @@ img {
 }
 
 .card {
-  max-width: 200px; /* Maximum width of the card */
-  width: 100%; /* Full width within its container */
-  height: 150px; /* Adjust height as needed */
-  margin: 10px; /* Spacing between cards */
+  max-width: 300px; /* Pick one consistent width */
+  height: auto; /* Allow height to adjust dynamically */
+  width: 100%; /* Make it responsive */
+  margin: 10px; /* Add spacing between cards */
 }
 
 /* Responsive Styles */
