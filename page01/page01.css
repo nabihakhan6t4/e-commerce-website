@@ -1,40 +1,144 @@
 @font-face {
-  font-family: "Helvetica-Bold";
-  src: url(../FONTS/Helvetica-Bold.ttf);
+  font-family: "helvetica-light";
+  src: url(../FONTS/helvetica-light-587ebe5a59211.ttf);
 }
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "helvetica-light", sans-serif;
 }
+
 .custom-btn {
   position: relative;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 1.5em;
-  color: white; /* Button text color */
-  padding: 10px 30px;
+  color: #fff; /* White text color */
+  padding: 0.375rem 0.75rem; /* Similar to Bootstrap button padding */
+  border-radius: 5px; /* Reduce border radius for sharper corners */
   letter-spacing: 0.1em;
-  background: #01c7f6; /* Default background color */
-  border: 2px solid #fff;
+  background: #0d6efd; /* Default background color */
+  border: 2px solid transparent; /* Set a default border size */
   text-decoration: none;
-  overflow: hidden; /* Ensure overflow is hidden for the hover effect */
+  transition: background 0.5s, color 0.5s, border-color 0.5s; /* Smooth transitions */
+  z-index: 1;
+}
+
+.custom-btn:hover {
+  color: #000; /* Change text color to black on hover */
+  background: #ebebeb; /* Change background to grey on hover */
+  border-color: #000; /* Add black border on hover */
 }
 
 .custom-btn::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -100%; /* Start from outside the left side */
+  left: 0;
   width: 100%;
   height: 100%;
-  color: black !important;
-  border: 1px solid black;
-  background: white; /* Background color on hover */
-  transition: left 0.5s ease; /* Transition effect for sliding in */
+  z-index: -1;
+  background: #ebebeb; /* Same grey for the effect */
+  transform-origin: right;
+  transition: transform 0.5s ease;
+  transform: translateX(100%); /* Start fully out of view */
+  border-radius: 5px; /* Match the button's border radius */
+}
+
+.custom-btn:hover::before {
+  transform-origin: left;
+  transform: translateX(0); /* Slide into view */
+}
+
+.custom-translate {
+  transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+}
+
+.custom-translate:hover {
+  transform: scale(1.1); /* Scale up the image to 110% on hover */
+}
+
+.hover-text {
+  cursor: default; /* Default cursor */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.hover-text:hover {
+  color: #0a85d1 !important; /* Change text color to blue on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.custom-classes:active {
+  color: #0a85d1;
+  border-bottom: 1px solid #0a85d1;
+}
+
+.custom-card-color .hover-text:hover {
+  color: #0a85d1 !important; /* Ensure this is applied */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+.active-category {
+  color: #0a85d1; /* Change text color when active */
+  border-bottom: 2px solid #0a85d1; /* Add bottom border when active */
+}
+
+.custom-img:hover{
+  background: url(../images/shirt_2_600x.webp);
+}
+
+.custom-decoration {
+  text-decoration: line-through;
+}
+.card-img-container {
+  position: relative;
+}
+
+.custom-img {
+  width: 100%;
+  height: auto;
 }
 
 
-.custom-btn:hover::before {
-  left: 0; /* Slide in from left */
+
+.custom-img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.5s ease;
+}
+
+.card-img-container:hover .custom-img-hover {
+  opacity: 1; /* Show on hover */
+}
+
+.card-img-container:hover .custom-img {
+  opacity: 0; /* Hide on hover */
+}
+
+
+
+.custom-img {
+  transition: transform 0.3s ease;
+}
+
+.custom-img:hover {
+  transform: scale(1.1);
+}
+
+.custom-btn {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* Darker shade */
 }
