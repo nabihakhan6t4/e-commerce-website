@@ -97,8 +97,9 @@
               <a class="nav-link active" href="#">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active">
+              <a class="nav-link active icon-cart">
                 <i class="fa-solid fa-cart-shopping"></i>
+                <span>0</span>
               </a>
             </li>
           </ul>
@@ -311,7 +312,7 @@
     <div class="container mt-5">
       <div class="row">
         <!-- col -->
-        <div class="col-lg-4 col-md-6 col-12">
+        <div class="col-lg-4 col-md-6 col-12" data-id="1">
           <!-- card -->
           <div class="card" style="width: 18rem">
             <div class="card-img-container">
@@ -332,14 +333,17 @@
                 <span class="custom-decoration"> Rs.6,000.00</span>
                 <span class="text-primary">Rs.5,400.00</span>
               </p>
-              <span class="badge rounded-pill text-bg-primary">Primary</span>
+              <a href="#" type="button" class="btn btn-custom addCart">
+                Add to Cart
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
           </div>
         </div>
         <!-- col -->
         <div class="col-lg-4 col-md-6 col-12">
           <!-- card -->
-          <div class="card" style="width: 18rem">
+          <div class="card" style="width: 18rem" data-id="2">
             <div class="card-img-container">
               <img
                 src="../images/blueshoe_1_600x.webp"
@@ -357,14 +361,17 @@
               <p class="card-text">
                 <span class="text-primary">Rs.22,600.00</span>
               </p>
-              <span class="badge rounded-pill text-bg-primary">Primary</span>
+              <a href="#" type="button" class="btn btn-custom addCart">
+                Add to Cart
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
           </div>
         </div>
 
         <div class="col-lg-4 col-md-6 col-12">
           <!-- col -->
-          <div class="card" style="width: 18rem">
+          <div class="card" style="width: 18rem" data-id="3">
             <!-- card -->
             <div class="card-img-container">
               <img
@@ -384,14 +391,17 @@
                 <span class="custom-decoration"> Rs.21,200.00</span>
                 <span class="text-primary">Rs.15,600.00</span>
               </p>
-              <span class="badge rounded-pill text-bg-primary">Primary</span>
+              <a href="#" type="button" class="btn btn-custom addCart">
+                Add to Cart
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
           </div>
         </div>
         <!-- col -->
         <div class="col-lg-4 col-md-6 col-12">
           <!-- card -->
-          <div class="card" style="width: 18rem">
+          <div class="card" style="width: 18rem" data-id="4">
             <div class="card-img-container">
               <img
                 src="../images/sunglass_1_600x.webp"
@@ -410,14 +420,17 @@
                 <span class="custom-decoration"> Rs.36,700.00</span>
                 <span class="text-primary">Rs.31,100.00</span>
               </p>
-              <span class="badge rounded-pill text-bg-primary">Primary</span>
+              <a href="#" type="button" class="btn btn-custom addCart">
+                Add to Cart
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
           </div>
         </div>
         <!-- col -->
         <div class="col-lg-4 col-md-6 col-12">
           <!-- card -->
-          <div class="card" style="width: 18rem">
+          <div class="card" style="width: 18rem" data-id="5">
             <div class="card-img-container">
               <img
                 src="../images/jacket_1_600x.webp"
@@ -436,14 +449,17 @@
                 <span class="custom-decoration"> Rs.36,700.00</span>
                 <span class="text-primary">Rs.31,100.00</span>
               </p>
-              <span class="badge rounded-pill text-bg-primary">Primary</span>
+              <a href="#" type="button" class="btn btn-custom addCart">
+                Add to Cart
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
           </div>
         </div>
         <!-- col -->
         <div class="col-lg-4 col-md-6 col-12">
           <!-- card -->
-          <div class="card" style="width: 18rem">
+          <div class="card" style="width: 18rem" data-id="6">
             <div class="card-img-container">
               <img
                 src="../images/ment-shirt_1_600x.webp"
@@ -462,12 +478,49 @@
                 <span class="custom-decoration"> Rs.36,700.00</span>
                 <span class="text-primary">Rs.31,100.00</span>
               </p>
-              <span class="badge rounded-pill text-bg-primary">Primary</span>
+              <a href="#" type="button" class="btn btn-custom addCart">
+                Add to Cart
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="cartTab">
+      <h1>Shopping Cart</h1>
+      <div class="listCart">
+        <!-- Cart Item Example -->
+        <div class="card">
+          <div class="card-img-container">
+            <img
+              src="../images/shirt_1_600x.webp"
+              class="card-img-top"
+              alt="W. Men Formal T-shirt"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">W. Men Formal T-shirt</h5>
+            <p class="card-text">
+              <span class="custom-decoration">Rs.6,000.00</span>
+              <span class="text-primary">Rs.5,400.00</span>
+            </p>
+            <div class="quantity">
+              <span class="minus">&lt;</span>
+              <span>1</span>
+              <span class="plus">&gt;</span>
+            </div>
+            <button class="remove-item">Remove</button> <!-- Button to remove item -->
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+        <a href="#" type="button" class="close btn-custom">Close</a>
+        
+      </div>
+    </div>
+    
 
     <div class="cursor"></div>
     <div class="cursor2"></div>

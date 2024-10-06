@@ -3,7 +3,6 @@
   src: url(../FONTS/helvetica-light-587ebe5a59211.ttf);
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -11,25 +10,33 @@
   font-family: "helvetica-light", sans-serif;
 }
 
+body {
+  background-color: #f4f4f4; /* Light background for contrast */
+  color: #333; /* Darker text color */
+}
+
+/* Button Styling */
 .custom-btn {
   position: relative;
   text-transform: capitalize;
   font-size: 1.5em;
-  color: #fff; /* White text color */
-  padding: 0.375rem 0.75rem; /* Similar to Bootstrap button padding */
-  border-radius: 5px; /* Reduce border radius for sharper corners */
+  color: #fff;
+  padding: 0.375rem 0.75rem;
+  border-radius: 5px;
   letter-spacing: 0.1em;
-  background: #0d6efd; /* Default background color */
-  border: 2px solid transparent; /* Set a default border size */
+  background: #007bff; /* Primary color */
+  border: 2px solid transparent;
   text-decoration: none;
-  transition: background 0.5s, color 0.5s, border-color 0.5s; /* Smooth transitions */
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    transform 0.3s ease; /* Smooth transitions */
   z-index: 1;
 }
 
 .custom-btn:hover {
-  color: #000; /* Change text color to black on hover */
-  background: #ebebeb; /* Change background to grey on hover */
-  border-color: #000; /* Add black border on hover */
+  color: #000;
+  background: #ebebeb;
+  border-color: #000;
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .custom-btn::before {
@@ -40,57 +47,193 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: #ebebeb; /* Same grey for the effect */
+  background: #ebebeb;
   transform-origin: right;
   transition: transform 0.5s ease;
-  transform: translateX(100%); /* Start fully out of view */
-  border-radius: 5px; /* Match the button's border radius */
+  transform: translateX(100%);
+  border-radius: 5px;
 }
 
 .custom-btn:hover::before {
   transform-origin: left;
-  transform: translateX(0); /* Slide into view */
+  transform: translateX(0);
 }
 
-.custom-translate {
-  transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+/* Image Effects */
+.custom-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
 }
 
-.custom-translate:hover {
-  transform: scale(1.1); /* Scale up the image to 110% on hover */
-}
-
-.hover-text {
-  cursor: default; /* Default cursor */
-  transition: color 0.3s ease; /* Smooth transition for color change */
-}
-
-.hover-text:hover {
-  color: #0a85d1 !important; /* Change text color to blue on hover */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-.custom-classes:active {
-  color: #0a85d1;
-  border-bottom: 1px solid #0a85d1;
+.custom-img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+  filter: brightness(0.9); /* Slight darken effect */
 }
 
 .custom-card-color .hover-text:hover {
   color: #0a85d1 !important; /* Ensure this is applied */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
-.active-category {
-  color: #0a85d1; /* Change text color when active */
-  border-bottom: 2px solid #0a85d1; /* Add bottom border when active */
+  cursor: pointer;
 }
 
-.custom-img:hover{
-  background: url(../images/shirt_2_600x.webp);
+/* Icon Cart */
+.icon-cart {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Add a transition for scaling */
 }
 
-.custom-decoration {
-  text-decoration: line-through;
+.icon-cart:hover {
+  transform: scale(1.1); /* Slightly enlarge icon on hover */
 }
+
+.icon-cart span {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background: red;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Cart Tab Styling */
+.cartTab {
+  width: 400px;
+  background: #353432;
+  color: #eee;
+  position: fixed;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  inset: 0 -400px 0 auto;
+  transition: inset 0.5s ease; /* Smooth transition for cart visibility */
+}
+
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fff;
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.cartTab .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.btn-custom {
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+@media (max-width: 480px) {
+  .cartTab {
+    width: 100%;
+    right: 0;
+  }
+}
+
+.cartTab .listCart .item img {
+  width: 100%;
+  transition: transform 0.3s ease; /* Smooth transition for images */
+}
+
+.cartTab .listCart .item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+.listCart .quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listCart .quantity span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+.listCart .quantity span:hover {
+  background: #0056b3;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.listCart.item:nth-child(even) {
+  background: #e0e0e0; /* Light grey for even items */
+}
+
+.listCart {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 300px; /* Limit height */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  padding: 10px; /* Add padding for inner content */
+}
+
+.listCart::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listCart::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 10px;
+}
+
+.listCart::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* Additional Hover Effects */
+.listCart .item:hover {
+  background: #d0d0d0; /* Change background on hover */
+  transform: scale(1.02); /* Slightly enlarge on hover */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Customizing List Item */
+.listCart .item {
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside the item */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.listCart .item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Elevate shadow on hover */
+}
+
+/* Card Image Container */
 .card-img-container {
   position: relative;
 }
@@ -98,9 +241,8 @@
 .custom-img {
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
-
-
 
 .custom-img-hover {
   position: absolute;
@@ -109,7 +251,7 @@
   width: 100%;
   height: auto;
   opacity: 0; /* Hidden by default */
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease; /* Smooth opacity transition */
 }
 
 .card-img-container:hover .custom-img-hover {
@@ -120,25 +262,348 @@
   opacity: 0; /* Hide on hover */
 }
 
-
-
+/* Hover Effects for Images */
 .custom-img {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
 }
 
 .custom-img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Zoom effect on hover */
+  filter: brightness(0.9); /* Slight darken effect */
 }
 
-.custom-btn {
-  background-color: #007bff; /* Bootstrap primary color */
-  color: white;
+/* Text Styling */
+.hover-text {
+  cursor: default; /* Default cursor */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.hover-text:hover {
+  color: #0a85d1 !important; /* Change text color to blue on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Active Category Styling */
+.active-category {
+  color: #0a85d1; /* Change text color when active */
+  border-bottom: 2px solid #0a85d1; /* Add bottom border when active */
+}
+
+/* Decoration Styling */
+.custom-decoration {
+  text-decoration: line-through; /* Line-through for decorated text */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .custom-btn {
+    font-size: 1.2em; /* Smaller font size on smaller screens */
+    padding: 0.25rem 0.5rem; /* Adjust padding */
+  }
+
+  .cartTab {
+    width: 90%; /* Adjust cart width */
+    padding: 10px; /* Add padding */
+  }
+}
+
+/* Adding Animations for Elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Move up slightly */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Return to original position */
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards; /* Apply the fadeIn animation */
+}
+
+
+.showCart .cartTab {
+  inset: 0; /* Show the cart */
+}
+
+.cartTab {
+  inset: 0 -400px 0 auto; /* Hide the cart initially */
+  transition: inset 0.5s ease; /* Smooth transition for cart visibility */
+}
+
+
+
+/* Cart Tab Styling */
+.cartTab {
+  width: 400px;
+  background: #353432;
+  color: #eee;
+  position: fixed;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  inset: 0 -400px 0 auto;
+  transition: inset 0.5s ease; /* Smooth transition for cart visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  z-index: 1000; /* Ensure cart is on top */
+}
+
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fff;
+  text-align: center; /* Center title */
+  background: #444; /* Background for the title */
+  border-bottom: 1px solid #555; /* Border under title */
+}
+
+/* Button Styling */
+.btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Space between buttons */
+  padding: 10px; /* Padding for button container */
+}
+
+.btn-custom {
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
   border: none;
-  padding: 10px 20px;
+  color: white;
+  background-color: #007bff;
   border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+  font-size: 16px; /* Increase font size */
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* List Cart Styling */
+.listCart {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 300px; /* Limit height */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  padding: 10px; /* Padding for inner content */
+}
+
+.listCart .card {
+  background: #444; /* Background color for items */
+  border-radius: 8px; /* Rounded corners for items */
+  margin-bottom: 10px; /* Space between items */
+  padding: 10px; /* Padding inside each item */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Transition effect */
+}
+
+.listCart .card:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Image Styling */
+.card-img-container {
+  overflow: hidden; /* Hide overflow for image */
+  border-radius: 5px; /* Rounded corners for image */
+}
+
+.card-img-top {
+  width: 100%; /* Full width for image */
+  transition: transform 0.3s ease; /* Smooth transition for images */
+}
+
+.card-body {
+  text-align: center; /* Center text */
+}
+
+/* Quantity Control */
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; /* Space above quantity */
+}
+
+.quantity span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+.quantity span:hover {
+  background: #0056b3;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Scrollbar Customization */
+.listCart::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listCart::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 10px;
+}
+
+.listCart::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+/* Cart Tab Styling */
+.cartTab {
+  width: 400px;
+  background: #353432;
+  color: #eee;
+  position: fixed;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  inset: 0 -400px 0 auto;
+  transition: inset 0.5s ease; /* Smooth transition for cart visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  z-index: 1000; /* Ensure cart is on top */
+}
+
+/* Header Styles */
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fff;
+  text-align: center; /* Center title */
+  background: #444; /* Background for the title */
+  border-bottom: 1px solid #555; /* Border under title */
+}
+
+/* Button Styles */
+.btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Space between buttons */
+  padding: 10px; /* Padding for button container */
+}
+
+.btn-custom {
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+  font-size: 16px; /* Increase font size */
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* List Cart Styles */
+.listCart {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 300px; /* Limit height */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  padding: 10px; /* Padding for inner content */
+  display: flex; /* Flexbox for better layout */
+  flex-direction: column; /* Vertical stacking of items */
+  gap: 10px; /* Space between items */
+}
+
+/* Card Styling */
+.card {
+  background: #444; /* Background color for items */
+  border-radius: 8px; /* Rounded corners for items */
+  padding: 10px; /* Padding inside each item */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Transition effect */
+}
+
+.card:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Image Container */
+.card-img-container {
+  overflow: hidden; /* Hide overflow for image */
+  border-radius: 5px; /* Rounded corners for image */
+}
+
+.card-img-top {
+  width: 100%; /* Full width for image */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for images */
+}
+
+/* Card Body */
+.card-body {
+  text-align: center; /* Center text */
+}
+
+/* Quantity Control */
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; /* Space above quantity */
+}
+
+.quantity span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+.quantity span:hover {
+  background: #0056b3;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Remove Item Button */
+.remove-item {
+  background-color: #dc3545; /* Bootstrap danger color */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Space above remove button */
   transition: background-color 0.3s ease;
 }
 
-.custom-btn:hover {
-  background-color: #0056b3; /* Darker shade */
+.remove-item:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+/* Scrollbar Customization */
+.listCart::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listCart::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 10px;
+}
+
+.listCart::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
 }
