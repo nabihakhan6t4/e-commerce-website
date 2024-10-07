@@ -106,7 +106,7 @@ body {
 /* Cart Tab Styling */
 .cartTab {
   width: 400px;
-  background: #353432;
+  background:linear-gradient(to right, #03012e, #01c7f6);
   color: #eee;
   position: fixed;
   display: grid;
@@ -125,8 +125,14 @@ body {
 }
 
 .cartTab .btn {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
 }
 
 .btn-custom {
@@ -338,7 +344,7 @@ body {
 /* Cart Tab Styling */
 .cartTab {
   width: 400px;
-  background: #353432;
+  background: linear-gradient(to right, #03012e, #01c7f6);
   color: #eee;
   position: fixed;
   display: grid;
@@ -394,9 +400,10 @@ body {
 }
 
 .listCart .card {
-  background: #444; /* Background color for items */
+  background:linear-gradient(to right, #03012e, #01c7f6);
   border-radius: 8px; /* Rounded corners for items */
   margin-bottom: 10px; /* Space between items */
+  color: white;
   padding: 10px; /* Padding inside each item */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   transition: transform 0.3s ease; /* Transition effect */
@@ -463,12 +470,14 @@ body {
 /* Cart Tab Styling */
 .cartTab {
   width: 400px;
-  background: #353432;
+  background: linear-gradient(to right, #03012e, #01c7f6);
   color: #eee;
   position: fixed;
   display: grid;
   grid-template-rows: 70px 1fr 70px;
   inset: 0 -400px 0 auto;
+  justify-content: center;
+  align-items: center;
   transition: inset 0.5s ease; /* Smooth transition for cart visibility */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
   z-index: 1000; /* Ensure cart is on top */
@@ -482,7 +491,7 @@ body {
   font-size: 24px;
   color: #fff;
   text-align: center; /* Center title */
-  background: #444; /* Background for the title */
+  background: linear-gradient(to right, #03012e, #01c7f6);
   border-bottom: 1px solid #555; /* Border under title */
 }
 
