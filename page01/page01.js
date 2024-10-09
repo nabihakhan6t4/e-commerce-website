@@ -36,7 +36,7 @@ function updateCartDisplay() {
       cartItem.innerHTML = `
       <div class="card" style="width: 18rem">
         <div class="card-img-container">
-          <img src="${item.image}" class="card-img-top custom-img" alt="${item.name}" />
+          <img src="${item.image}" class="card-img-top " alt="${item.name}" />
         </div>
         <div class="card-body text-center">
           <h5 class="card-title">${item.name}</h5>
@@ -119,65 +119,36 @@ document.querySelectorAll(".addCart").forEach((button) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const products = document.documentElement.querySelector(".products");
+const targetDate = new Date();
+targetDate.setUTCDate(targetDate.getUTCDate() + 23); // 23 days later
+targetDate.setUTCHours(targetDate.getUTCHours() + 6); // 6 hours later
+targetDate.setUTCMinutes(targetDate.getUTCMinutes() + 55); // 55 minutes later
+targetDate.setUTCSeconds(targetDate.getUTCSeconds() + 32); // 32 seconds later
 
-  async function fetchProducts(url) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) throw new Error("Network response was not ok");
-      const data = await response.json();
-      let productsHTML = "";
-  
-      for (let i = 0; i < data.length; i++) {
-        const imageUrl = data[i].images.length > 0 ? data[i].images[0] : 'placeholder.jpg'; // First image or placeholder
-        const description = data[i].description;
-  
-        productsHTML += `
-          <div class="card" data-id="${data[i].id}" style="width: 18rem; height:18rem;">
-            <div class="card-img-container">
-              <img src="${imageUrl}" loading="eager" class="card-img-top product-img" alt="${data[i].title}" />
-            </div>
-            <div class="card-body text-center">
-              <h5 class="product-title">${data[i].title}</h5>
-              <h6 class="product-category">${data[i].category.name}</h6>
-              <p class="product-description">${description.length > 20 ? description.substring(0, 20).concat("...more") : description}</p>
-              <div class="product-price-container">
-                <h3 class="product-price">Rs.${data[i].price}</h3>
-                <a href="#" type="button" data-productID="${data[i].id}" class="btn btn-custom addCart">
-                  Add to Cart
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-              </div>
-            </div>
-          </div>`;
-      }
-  
-      products.innerHTML = productsHTML;
-      attachAddToCartListeners(); // Attach listeners here
-    } catch (error) {
-      console.error("Fetch error:", error);
-      products.innerHTML = "<p>Failed to load products. Please try again later.</p>";
-    }
+setInterval(updateCountDown, 1000);
+
+function updateCountDown() {
+  const now = new Date();
+  const distance = targetDate - now; // Time difference
+
+  // Calculate days, hours, minutes, seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Update countdown display
+  document.getElementById('days').innerHTML = days;
+  document.getElementById('hours').innerHTML = hours;
+  document.getElementById('minutes').innerHTML = minutes;
+  document.getElementById('seconds').innerHTML = seconds;
+
+  // If the countdown is finished, display a message
+  if (distance < 0) {
+    clearInterval(updateCountDown);
+    document.getElementById('days').innerHTML = "0";
+    document.getElementById('hours').innerHTML = "0";
+    document.getElementById('minutes').innerHTML = "0";
+    document.getElementById('seconds').innerHTML = "0";
   }
-  
-
-
-  fetchProducts(`https://api.escuelajs.co/api/v1/products`);
-
-  function attachAddToCartListeners() {
-    document.querySelectorAll(".addCart").forEach((button) => {
-      button.addEventListener("click", (event) => {
-        event.preventDefault();
-        const card = button.closest(".card");
-        const product = {
-          id: card.getAttribute("data-id"),
-          name: card.querySelector(".product-title").textContent,
-          price: card.querySelector(".product-price").textContent,
-          image: card.querySelector("img").src,
-        };
-        addToCart(product);
-      });
-    });
-  }
-});
+}
