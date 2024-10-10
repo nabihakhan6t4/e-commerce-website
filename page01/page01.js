@@ -138,17 +138,14 @@ function updateCountDown() {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Update countdown display
-  document.getElementById('days').innerHTML = days;
-  document.getElementById('hours').innerHTML = hours;
-  document.getElementById('minutes').innerHTML = minutes;
-  document.getElementById('seconds').innerHTML = seconds;
+  document.querySelectorAll('.time')[0].innerHTML = days; // For days
+  document.querySelectorAll('.time')[1].innerHTML = hours; // For hours
+  document.querySelectorAll('.time')[2].innerHTML = minutes; // For minutes
+  document.querySelectorAll('.time')[3].innerHTML = seconds; // For seconds
 
   // If the countdown is finished, display a message
   if (distance < 0) {
     clearInterval(updateCountDown);
-    document.getElementById('days').innerHTML = "0";
-    document.getElementById('hours').innerHTML = "0";
-    document.getElementById('minutes').innerHTML = "0";
-    document.getElementById('seconds').innerHTML = "0";
+    document.querySelectorAll('.time').forEach(time => time.innerHTML = "0");
   }
 }

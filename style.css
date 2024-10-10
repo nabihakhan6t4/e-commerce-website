@@ -73,72 +73,119 @@ p {
 /* Background Images */
 .pic1 {
   background: url(images/fashion1.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
+
 .pic2 {
   background: url(images/fashion2.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic3 {
   background: url(images/fashion-3.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic4 {
   background: url(images/fashion-4.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic5 {
   background: url(images/fashion-5.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic6 {
   background: url(images/fashion-6.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic7 {
   background: url(images/cosmetic.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic8 {
   background: url(images/Jewelry.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic9 {
   background: url(images/t-shirt-1.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic10 {
   background: url(images/dark.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic11 {
   background: url(images/rtl.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic12 {
   background: url(images/demos-coming.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic13 {
   background: url(images/Collection\ All\ -\ Shop.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic14 {
   background: url(images/filter-drawer.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic15 {
   background: url(images/collection-list.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic16 {
   background: url(images/collection-specific.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic17 {
   background: url(images/product-details.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic18 {
   background: url(images/cart.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic19 {
   background: url(images/wishlist.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic20 {
   background: url(images/blog-two.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic21 {
   background: url(images/blog-details.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic22 {
   background: url(images/service-blog.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .pic23 {
   background: url(images/service-blog-details.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
 .card-animation:hover {
   background-position: bottom;

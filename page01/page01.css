@@ -677,3 +677,43 @@ body {
   font-size: 20px; /* Adjust label font size */
   margin-top: 5px; /* Space between number and label */
 }
+
+.card-img-container {
+  position: relative; /* For positioning the overlay */
+}
+
+.countdown-overlay {
+  position: absolute; /* Positioning overlay on top of the image */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for center */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: white background with some transparency */
+  padding: 10px; /* Padding around the text */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center text */
+}
+
+.countdown-overlay .time {
+  font-size: 24px; /* Increase font size for better visibility */
+  font-weight: bold; /* Make it bold */
+}
+
+.countdown-overlay .label {
+  font-size: 14px; /* Smaller font for labels */
+}
+
+
+.to-top{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  height: 40px;
+  width: 40px;
+  font-size: 30px;
+  color: black;
+  background: #fff;
+  border-radius:6px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
