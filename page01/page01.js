@@ -149,3 +149,14 @@ function updateCountDown() {
     document.querySelectorAll('.time').forEach(time => time.innerHTML = "0");
   }
 }
+
+
+
+
+
+
+
+
+
+
+
