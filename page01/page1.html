@@ -64,8 +64,9 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                >Pages</a
               >
+                Pages
+              </a>
               <ul class="dropdown-menu">
                 <h5 class="text-center">Niche Demos</h5>
                 <li>
@@ -79,8 +80,8 @@
                 <li>
                   <a class="dropdown-item" href="#"
                     >Beauty & Cosmetic
-                    <span class="badge bg-danger fst-italic">Hot</span>
-                  </a>
+                    <span class="badge bg-danger fst-italic">Hot</span></a
+                  >
                 </li>
                 <li><a class="dropdown-item" href="#">Jewelry</a></li>
                 <li><a class="dropdown-item" href="#">T-Shirt</a></li>
@@ -94,13 +95,32 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Login</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link active icon-cart">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span>0</span>
               </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-regular fs-5 fa-user"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../login/register.html">Register</a>
+                </li>
+                <!-- Update as needed -->
+                <li><a class="dropdown-item" href="../login/login.html">Login</a></li>
+                <li>
+                  <a class="dropdown-item" href="../login/updateProfile.html">Update Profile</a>
+                </li>
+                <!-- Update as needed -->
+              </ul>
             </li>
           </ul>
           <form class="d-flex ms-auto" role="search">
@@ -557,13 +577,20 @@
     <div class="featured">
       <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
-    
           <div class="col-12 col-md-6 col-lg-4">
             <!-- card -->
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem">
               <div class="card-img-container position-relative">
-                <img src="../images/watch_600x.webp" class="card-img-top custom-img" alt="Watch" />
-                <img src="../images/watch_1_600x.webp" class="card-img-top custom-img-hover" alt="Watch Hover" />
+                <img
+                  src="../images/watch_600x.webp"
+                  class="card-img-top custom-img"
+                  alt="Watch"
+                />
+                <img
+                  src="../images/watch_1_600x.webp"
+                  class="card-img-top custom-img-hover"
+                  alt="Watch Hover"
+                />
                 <div class="countdown-overlay">
                   <div class="container text-center">
                     <div class="d-flex justify-content-center">
@@ -579,7 +606,7 @@
                         <div class="time" id="minutes">55</div>
                         <div class="label">Minutes</div>
                       </div>
-                      <div class="custom-color p-2 ">
+                      <div class="custom-color p-2">
                         <div class="time" id="seconds">27</div>
                         <div class="label">Seconds</div>
                       </div>
@@ -600,13 +627,21 @@
               </div>
             </div>
           </div>
-    
+
           <div class="col-12 col-md-6 col-lg-4">
             <!-- card -->
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem">
               <div class="card-img-container position-relative">
-                <img src="../images/lipstick_1_366x.webp" class="card-img-top custom-img" alt="Lipstick" />
-                <img src="../images/lipstick_2_600x.webp" class="card-img-top custom-img-hover" alt="Lipstick Hover" />
+                <img
+                  src="../images/lipstick_1_366x.webp"
+                  class="card-img-top custom-img"
+                  alt="Lipstick"
+                />
+                <img
+                  src="../images/lipstick_2_600x.webp"
+                  class="card-img-top custom-img-hover"
+                  alt="Lipstick Hover"
+                />
                 <div class="countdown-overlay">
                   <div class="container text-center">
                     <div class="d-flex justify-content-center">
@@ -643,13 +678,21 @@
               </div>
             </div>
           </div>
-    
+
           <div class="col-12 col-md-6 col-lg-4">
             <!-- card -->
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem">
               <div class="card-img-container">
-                <img src="../images/shirt_1_600x.webp" class="card-img-top custom-img" alt="Shirt" />
-                <img src="../images/shirt_2_600x.webp" class="card-img-top custom-img-hover" alt="Shirt Hover" />
+                <img
+                  src="../images/shirt_1_600x.webp"
+                  class="card-img-top custom-img"
+                  alt="Shirt"
+                />
+                <img
+                  src="../images/shirt_2_600x.webp"
+                  class="card-img-top custom-img-hover"
+                  alt="Shirt Hover"
+                />
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">W.Men Formal T-shirt</h5>
@@ -664,14 +707,17 @@
               </div>
             </div>
           </div>
-    
         </div>
       </div>
     </div>
-    
-    <div class="to-top">
-      <i class="fa-solid fa-arrow-up"></i>
+
+    <div id="progress">
+      <span id="progress-value">
+        &#8593;
+        <!-- Arrow symbol -->
+      </span>
     </div>
+
     <div class="cursor"></div>
     <div class="cursor2"></div>
 

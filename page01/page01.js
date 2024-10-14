@@ -133,30 +133,76 @@ function updateCountDown() {
 
   // Calculate days, hours, minutes, seconds
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Update countdown display
-  document.querySelectorAll('.time')[0].innerHTML = days; // For days
-  document.querySelectorAll('.time')[1].innerHTML = hours; // For hours
-  document.querySelectorAll('.time')[2].innerHTML = minutes; // For minutes
-  document.querySelectorAll('.time')[3].innerHTML = seconds; // For seconds
+  document.querySelectorAll(".time")[0].innerHTML = days; // For days
+  document.querySelectorAll(".time")[1].innerHTML = hours; // For hours
+  document.querySelectorAll(".time")[2].innerHTML = minutes; // For minutes
+  document.querySelectorAll(".time")[3].innerHTML = seconds; // For seconds
 
   // If the countdown is finished, display a message
   if (distance < 0) {
     clearInterval(updateCountDown);
-    document.querySelectorAll('.time').forEach(time => time.innerHTML = "0");
+    document
+      .querySelectorAll(".time")
+      .forEach((time) => (time.innerHTML = "0"));
   }
 }
 
 
+let calcScrollValue = () => {
+  let scrollProgress = document.getElementById("progress");
+  let scrollPercentage = document.getElementById("scroll-percentage"); // Target the percentage span
+  let pos = document.documentElement.scrollTop;
+  let calcHeight =
+    document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrollValue = Math.round((pos * 100) / calcHeight);
+
+  if (pos > 100) {
+    scrollProgress.style.display = "grid";
+  } else {
+    scrollProgress.style.display = "none";
+  }
+
+  scrollProgress.addEventListener("click", () => {
+    document.documentElement.scrollTop = 0;
+  });
+
+  // Update the percentage next to the arrow
+  
+  scrollProgress.style.background = `conic-gradient(#03012e ${scrollValue}%, #01c7f6 ${scrollValue}%)`;
+};
+
+window.onscroll = calcScrollValue;
+window.onload = calcScrollValue;
 
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
 
+  dropdownToggle.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default action
+    const dropdownMenu = dropdownToggle.nextElementSibling; // Get the dropdown menu
 
+    // Toggle display of dropdown menu
+    if (dropdownMenu.style.display === "block") {
+      dropdownMenu.style.display = "none";
+    } else {
+      dropdownMenu.style.display = "block";
+    }
+  });
 
-
-
+  // Close dropdown when clicking outside
+  window.addEventListener("click", function (event) {
+    if (!dropdownToggle.contains(event.target) && !dropdownToggle.nextElementSibling.contains(event.target)) {
+      dropdownToggle.nextElementSibling.style.display = "none";
+    }
+  });
+});
