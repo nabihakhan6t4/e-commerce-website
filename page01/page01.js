@@ -125,7 +125,7 @@ targetDate.setUTCHours(targetDate.getUTCHours() + 6); // 6 hours later
 targetDate.setUTCMinutes(targetDate.getUTCMinutes() + 55); // 55 minutes later
 targetDate.setUTCSeconds(targetDate.getUTCSeconds() + 32); // 32 seconds later
 
-setInterval(updateCountDown, 1000);
+const intervalId = setInterval(updateCountDown, 1000);
 
 function updateCountDown() {
   const now = new Date();
@@ -140,27 +140,39 @@ function updateCountDown() {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Update countdown display
-  document.querySelectorAll(".time")[0].innerHTML = days; // For days
-  document.querySelectorAll(".time")[1].innerHTML = hours; // For hours
-  document.querySelectorAll(".time")[2].innerHTML = minutes; // For minutes
-  document.querySelectorAll(".time")[3].innerHTML = seconds; // For seconds
+  document.getElementById("days").innerHTML = days; // For days
+  document.getElementById("hours").innerHTML = hours; // For hours
+  document.getElementById("minutes").innerHTML = minutes; // For minutes
+  document.getElementById("seconds").innerHTML = seconds; // For seconds
+
+  // Update countdown in cards
+  document.getElementById("days1").innerHTML = days;
+  document.getElementById("hours1").innerHTML = hours;
+  document.getElementById("minutes1").innerHTML = minutes;
+  document.getElementById("seconds1").innerHTML = seconds;
 
   // If the countdown is finished, display a message
   if (distance < 0) {
-    clearInterval(updateCountDown);
+    clearInterval(intervalId); // Correctly clear the interval
     document
       .querySelectorAll(".time")
       .forEach((time) => (time.innerHTML = "0"));
+    // Optionally display a finished message
+    document.getElementById("finished-message").innerHTML =
+      "Countdown finished!";
   }
 }
 
+// Optionally, you can initialize the countdown immediately if you want to show real-time updates
+updateCountDown(); // Call once to set the initial values
 
 let calcScrollValue = () => {
   let scrollProgress = document.getElementById("progress");
   let scrollPercentage = document.getElementById("scroll-percentage"); // Target the percentage span
   let pos = document.documentElement.scrollTop;
   let calcHeight =
-    document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
   let scrollValue = Math.round((pos * 100) / calcHeight);
 
   if (pos > 100) {
@@ -174,15 +186,12 @@ let calcScrollValue = () => {
   });
 
   // Update the percentage next to the arrow
-  
+
   scrollProgress.style.background = `conic-gradient(#03012e ${scrollValue}%, #01c7f6 ${scrollValue}%)`;
 };
 
 window.onscroll = calcScrollValue;
 window.onload = calcScrollValue;
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownToggle = document.querySelector(".dropdown-toggle");
@@ -201,7 +210,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Close dropdown when clicking outside
   window.addEventListener("click", function (event) {
-    if (!dropdownToggle.contains(event.target) && !dropdownToggle.nextElementSibling.contains(event.target)) {
+    if (
+      !dropdownToggle.contains(event.target) &&
+      !dropdownToggle.nextElementSibling.contains(event.target)
+    ) {
       dropdownToggle.nextElementSibling.style.display = "none";
     }
   });
