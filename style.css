@@ -187,6 +187,31 @@ p {
   background-position: center top; /* Center horizontally, top vertically */
   background-size: cover; /* Ensure the image covers the entire area */
 }
+.pic24 {
+  background: url(images/about.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
+}
+.pic25 {
+  background: url(images/contact.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
+}
+.pic26 {
+  background: url(images/service.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
+}
+.pic27 {
+  background: url(images/faq.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
+}
+.pic28 {
+  background: url(images/404.jpg);
+  background-position: center top; /* Center horizontally, top vertically */
+  background-size: cover; /* Ensure the image covers the entire area */
+}
 .card-animation:hover {
   background-position: bottom;
   cursor: pointer;
@@ -423,9 +448,6 @@ img {
   position: relative;
 }
 
-
-
-
 #progress {
   position: fixed;
   bottom: 20px;
@@ -450,3 +472,34 @@ img {
   font-size: 35px;
   color: #0056b3;
 }
+
+
+
+
+
+
+
+  .table-header {
+    background-color: #343A40 !important;
+    color: #fff !important;
+    border: none !important;
+  }
+
+  .row-light {
+    background-color: #F2F2F2 !important;
+    border: none !important;
+  }
+
+  .row-dark{
+    background: #FFFFFF !important;
+    border: none !important;
+  }
+
+  .text-custom {
+    color: #eab73e !important;
+  }
+
+  .text-decoration-line-through {
+    text-decoration: line-through !important;
+  }
+

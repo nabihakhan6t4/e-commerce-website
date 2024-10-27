@@ -219,24 +219,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// let obj = {
-//   user: "nabiha",
-//   greet: function () {
-//     console.log("hi");
-//   },
-//   greet2() {
-//     console.log("hello");
-//   },
-// };
 
-// obj.greet()
-// obj.greet2()
-
-// let user = 26
-// let username = 'nabiha'
-// let obj = {
-//  [ user] :45, //user => nabiha ,
-//  [ username] : 'hira'
-
-// }
-// console.log(obj);
