@@ -14,7 +14,12 @@
 .custom-header-color,
 .custom-hero-color {
   font-family: "Helvetica-Bold";
-  background: linear-gradient(to right, #03012e, #01c7f6);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 .custom-color {
@@ -473,33 +478,32 @@ img {
   color: #0056b3;
 }
 
+.table-header {
+  background-color: #343a40 !important;
+  color: #fff !important;
+  border: none !important;
+}
 
+.row-light {
+  background-color: #f2f2f2 !important;
+  border: none !important;
+}
 
+.row-dark {
+  background: #ffffff !important;
+  border: none !important;
+}
 
+.text-custom {
+  color: #eab73e !important;
+}
 
+.text-decoration-line-through {
+  text-decoration: line-through !important;
+}
 
+.custom-border-2 {
+  border-radius: 50%;
+}
 
-  .table-header {
-    background-color: #343A40 !important;
-    color: #fff !important;
-    border: none !important;
-  }
-
-  .row-light {
-    background-color: #F2F2F2 !important;
-    border: none !important;
-  }
-
-  .row-dark{
-    background: #FFFFFF !important;
-    border: none !important;
-  }
-
-  .text-custom {
-    color: #eab73e !important;
-  }
-
-  .text-decoration-line-through {
-    text-decoration: line-through !important;
-  }
 
