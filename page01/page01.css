@@ -733,23 +733,51 @@ body {
   font-size: 35px;
   color: #0056b3;
 }
-.nav-item.dropdown .dropdown-toggle {
-  text-decoration: none; 
-  border: none;
-  position: relative; 
+
+
+
+/* Style for Navbar */
+.navbar {
+  background-color: #FFFFFF;
 }
 
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Gradient hover effect on nav links */
+.nav-link:hover,
+.nav-link:focus {
+  color: transparent !important;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Dropdown Menu Customization */
+.nav-item.dropdown .dropdown-toggle {
+  text-decoration: none;
+  border: none;
+  position: relative;
+}
 
 .nav-item.dropdown .dropdown-toggle::after {
-  display: none; 
+  display: none;
 }
 
 .nav-item.dropdown .dropdown-menu {
-  display: none; 
-  position: absolute; 
-  z-index: 1000; 
-  opacity: 0; 
-  transition: opacity 0.3s ease; 
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .nav-item.dropdown:hover .dropdown-menu {
@@ -758,19 +786,37 @@ body {
 }
 
 .dropdown-menu {
-  background: #fff; 
-  border: 1px solid #ddd; 
-  border-radius: 0.25rem; 
-  padding: 0.5rem 0; 
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-menu:hover {
-  color: #007bff; 
+/* Gradient Background on Dropdown Hover */
+.dropdown-item:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: #fff !important;
 }
 
+.icon-cart span {
+  font-size: 0.75rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Navbar Toggler Style */
+.navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.1);
+}
 
 .nav-item.dropdown .dropdown-toggle:focus {
-  outline: none; 
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); 
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
 }
+
