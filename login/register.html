@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../page01/page01.css" />
+    <link rel="stylesheet" href="../Fashion 1/Fashion-1.css" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -21,248 +21,271 @@
     <div class="cursor2"></div>
 
     <!-- Header Start -->
-    <nav
-      class="navbar custom-header-color"
-      aria-label="Light offcanvas navbar text-white"
-    >
-      <div class="container-fluid d-flex flex-row">
-        <a class="navbar-brand" href="#">
-          <img
-            src="../images/logo.png"
-            class="img-fluid w-50 w-md-75 w-lg-100"
-            alt="Logo"
-          />
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="../images/logo-blue.avif" alt="Logo" class="me-2" />
         </a>
-
-        <div class="d-flex align-items-center mx-auto justify-content-center">
-          <!-- Cart Icon -->
-          <a class="nav-link icon-cart position-relative me-4" href="#">
-            <i class="fa-solid fa-cart-shopping fs-5 fw-bold text-white"></i>
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              >0</span
-            >
-          </a>
-          <!-- User Account Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              aria-label="User Account"
-            >
-              <i class="fa-regular fa-user fs-5 text-white fw-bold"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="../login/register.html"
-                  >Create account</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="../login/login.html">Login</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="../login/updateProfile.html"
-                  >Update Profile</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbarLight"
-          aria-controls="offcanvasNavbarLight"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div
-          class="offcanvas offcanvas-end custom-header-color"
-          tabindex="-1"
-          id="offcanvasNavbarLight"
-          aria-labelledby="offcanvasNavbarLightLabel"
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarSupportedContent"
         >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">
-              <img src="../images/logo.png" width="200" alt="Logo" />
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-
-          <div class="offcanvas-body text-white">
-            <ul
-              class="navbar-nav flex-column text-center custom-decoration-hover"
+          <ul
+            class="navbar-nav ms-auto mb-2 mb-lg-0 text-center custom-decoration-hover"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" href="../login/register.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Blog Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                <li>
+                  <a class="dropdown-item" href="Blog-Details.html"
+                    >Blog Details</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Blog-Service.html"
+                    >Blog Service</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Blog-Service-Details.html"
+                    >Blog Service Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Product Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="Collection-All/Shop.html"
+                    >Collection All / Shop</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="Collection-All-(Filter Drawer).html"
+                    >Collection All (Filter Drawer)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Collection-List.html"
+                    >Collection List</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Exclusive-Collection.html"
+                    >Exclusive Collection</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Product-Details.html"
+                    >Product Details</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="Cart.html">Cart</a></li>
+                <li>
+                  <a class="dropdown-item" href="Wishlist.html">Wishlist</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Other Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="About.html">About</a></li>
+                <li>
+                  <a class="dropdown-item" href="Contact.html">Contact</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Service.html">Service</a>
+                </li>
+                <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
+                <li><a class="dropdown-item" href="404.html">404</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Home Demos
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../Fashion 1/Fashion-1.html"
+                    >Fashion 1</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../Fashion 2/Fashion-2.html"
+                    >Fashion 2</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../Fashion 3/Fashion-3.html"
+                    >Fashion 3</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="../Beauty & Cosmetic/Beauty-&-Cosmetic.html"
+                    >Beauty & Cosmetic</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../Jewelry/Jewelry.html"
+                    >Jewelry</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">T-Shirt</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Electronics</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Single Product</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Animation</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"> Dark</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"> RTL</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center ms-auto">
+            <!-- Cart Icon -->
+            <a
+              class="nav-link active icon-cart position-relative me-3"
+              href="#"
             >
-              <li class="nav-item mb-2">
-                <a class="nav-link active custom-white fs-5" href="page1.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item dropdown mb-2">
-                <a
-                  class="nav-link dropdown-toggle fs-5 custom-white"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >Blog Pages</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                  <li>
-                    <a class="dropdown-item" href="Blog-Details.html"
-                      >Blog Details</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Blog-Service.html"
-                      >Blog Service</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Blog-Service-Details.html"
-                      >Blog Service Details</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown mb-2">
-                <a
-                  class="nav-link dropdown-toggle text-white fs-5 custom-white"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >Product Pages</a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="Collection-All/Shop.html"
-                      >Collection All / Shop</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="Collection-All-(Filter Drawer).html"
-                      >Collection All (Filter Drawer)</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Collection-List.html"
-                      >Collection List</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Exclusive-Collection.html"
-                      >Exclusive Collection</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Product-Details.html"
-                      >Product Details</a
-                    >
-                  </li>
-                  <li><a class="dropdown-item" href="Cart.html">Cart</a></li>
-                  <li>
-                    <a class="dropdown-item" href="Wishlist.html">Wishlist</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown mb-2">
-                <a
-                  class="nav-link dropdown-toggle text-white fs-5 custom-white"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >Other Pages</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="About.html">About</a></li>
-                  <li>
-                    <a class="dropdown-item" href="Contact.html">Contact</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Service.html">Service</a>
-                  </li>
-                  <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
-                  <li><a class="dropdown-item" href="404.html">404</a></li>
-                </ul>
-              </li>
-            </ul>
+              <i class="fa-solid fa-cart-shopping fs-5"></i>
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >
+                0
+              </span>
+            </a>
+            <!-- User Account Dropdown -->
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                aria-label="User Account"
+              >
+                <i class="fa-regular fa-user fs-5"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../login/register.html"
+                    >Create account</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../login/login.html">Login</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../login/updateProfile.html"
+                    >Update Profile</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </nav>
-    <!-- Header End -->
 
-    <div class="container mt-5">
-      <form id="registerForm" class="registration-form">
-        <h2 class="text-center">Register</h2>
-        <div class="form-group mb-3">
-          <input
-            type="text"
-            placeholder="Username"
-            required
-            id="username"
-            class="form-control"
-            aria-label="Username"
-          />
+    <!-- Header End -->
+    <!-- Form Start -->
+    
+    <div class="body">
+      <div class="wrapper">
+        <div class="form-wrapper sign-in">
+          <form action="">
+            <h2>Sign In</h2>
+            <div class="input-group">
+              <input type="text" id="username" required />
+              <label for="username">Username</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" required />
+              <label for="password">Password</label>
+            </div>
+            <div class="remember">
+              <label> <input type="checkbox" /> Remember me </label>
+            </div>
+            <button type="submit">Sign In</button>
+            <div class="signUp-link">
+              <p>
+                Don’t have an account?
+                <a href="#" class="signUpBtn-link">Sign Up</a>
+              </p>
+            </div>
+            <div class="social-platform">
+              <p>Or sign in with</p>
+              <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="form-group mb-3">
-          <input
-            type="email"
-            placeholder="Email address"
-            required
-            id="email"
-            class="form-control"
-            aria-label="Email address"
-          />
-        </div>
-        <div class="form-group mb-3">
-          <input
-            type="password"
-            id="password"
-            required
-            placeholder="Password"
-            class="form-control"
-            aria-label="Password"
-          />
-          <small
-            >Password must contain at least 8 characters, one uppercase, one
-            lowercase, one number, and one special character.</small
-          >
-        </div>
-        <div class="form-group mb-3">
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            required
-            id="confirmPassword"
-            class="form-control"
-            aria-label="Confirm Password"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Register</button>
-        <div class="text-center mt-3">
-          <a href="login.html">Already have an account? Login</a>
-        </div>
-      </form>
+      </div>
     </div>
+    <!-- Form End -->
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <!-- typed -->
