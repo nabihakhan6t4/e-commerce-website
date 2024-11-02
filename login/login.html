@@ -9,32 +9,333 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../Fashion 1/Fashion-1.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
-    <div class="container">
-      <form id="loginForm" class="registration-form">
-        <h2>Login</h2>
-        <div class="form-group">
-          <input type="email" placeholder="Email address" required id="email" />
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+
+    <!-- Header Start -->
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="../images/logo-blue.avif" alt="Logo" class="me-2" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarSupportedContent"
+        >
+          <ul
+            class="navbar-nav ms-auto mb-2 mb-lg-0 text-center custom-decoration-hover"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" href="../login/register.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Blog Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                <li>
+                  <a class="dropdown-item" href="Blog-Details.html"
+                    >Blog Details</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Blog-Service.html"
+                    >Blog Service</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Blog-Service-Details.html"
+                    >Blog Service Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Product Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="Collection-All/Shop.html"
+                    >Collection All / Shop</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="Collection-All-(Filter Drawer).html"
+                    >Collection All (Filter Drawer)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Collection-List.html"
+                    >Collection List</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Exclusive-Collection.html"
+                    >Exclusive Collection</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Product-Details.html"
+                    >Product Details</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="Cart.html">Cart</a></li>
+                <li>
+                  <a class="dropdown-item" href="Wishlist.html">Wishlist</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Other Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="About.html">About</a></li>
+                <li>
+                  <a class="dropdown-item" href="Contact.html">Contact</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Service.html">Service</a>
+                </li>
+                <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
+                <li><a class="dropdown-item" href="404.html">404</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Home Demos
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../Fashion 1/Fashion-1.html"
+                    >Fashion 1</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../Fashion 2/Fashion-2.html"
+                    >Fashion 2</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../Fashion 3/Fashion-3.html"
+                    >Fashion 3</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="../Beauty & Cosmetic/Beauty-&-Cosmetic.html"
+                    >Beauty & Cosmetic</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../Jewelry/Jewelry.html"
+                    >Jewelry</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">T-Shirt</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Electronics</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Single Product</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Animation</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"> Dark</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"> RTL</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center ms-auto">
+            <!-- Cart Icon -->
+            <a
+              class="nav-link active icon-cart position-relative me-3"
+              href="#"
+            >
+              <i class="fa-solid fa-cart-shopping fs-5"></i>
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >
+                0
+              </span>
+            </a>
+            <!-- User Account Dropdown -->
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                aria-label="User Account"
+              >
+                <i class="fa-regular fa-user fs-5"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../login/register.html"
+                    >Create Account</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../login/login.html">Login</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../login/updateProfile.html"
+                    >Update Profile</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            required
-            id="password"
-          />
+      </div>
+    </nav>
+
+    <!-- Header End -->
+    <!-- Form Start -->
+    <div class="body">
+      <div class="wrapper">
+        <div class="form-wrapper sign-up">
+          <form action="">
+            <h2>Create an Account</h2>
+            <div class="input-group">
+              <input type="text" id="login-username" required />
+              <label for="login-username">Username</label>
+            </div>
+            <div class="input-group">
+              <input type="email" id="email" required />
+              <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="login-password" required />
+              <label for="login-password">Password</label>
+            </div>
+            <div class="remember">
+              <label>
+                <input type="checkbox" /> I agree to the terms and conditions
+              </label>
+            </div>
+            <button type="submit">Register</button>
+            <div class="signUp-link">
+              <p>
+                Already have an account?
+                <a href="#" class="signInBtn-link">Log In</a>
+              </p>
+            </div>
+          </form>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-        <a href="register.html">Don't have an account? Register</a>
-      </form>
+
+        <div class="form-wrapper sign-in">
+          <form action="">
+            <h2>Log In</h2>
+            <div class="input-group">
+              <input type="text" id="username" required />
+              <label for="username">Username</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" required />
+              <label for="password">Password</label>
+            </div>
+            <div class="remember">
+              <label> <input type="checkbox" /> Remember Me </label>
+            </div>
+            <button type="submit">Log In</button>
+            <div class="signUp-link">
+              <p>
+                Don't have an account?
+                <a href="#" class="signUpBtn-link">Create Account</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="script.js"></script>
+    <!-- Form End -->
+
+    <div id="progress">
+      <span id="progress-value">
+        &#8593;
+        <!-- Arrow symbol -->
+        <span id="scroll-percentage"></span>
+        <!-- Placeholder for the percentage -->
+      </span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- typed -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- bootstrap-js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom-js -->
+
+    <script src="../Fashion 1/Fashion-1.js"></script>
+    <script src="../script.js"></script>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

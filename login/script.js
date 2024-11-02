@@ -1,96 +1,139 @@
-// // Function to check if user is logged in
-// function checkLogin() {
-//     const loggedInUser = localStorage.getItem("loggedInUser");
-//     const welcomeMessage = document.getElementById("welcomeMessage");
-//     const logoutButton = document.getElementById("logoutButton");
+// Ensure the DOM is fully loaded before running the script
+
+  // Import Firebase functionality
+  import { 
+    auth, 
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword, 
+    sendEmailVerification, 
+    signOut, 
+    onAuthStateChanged 
+  } from "./firebase.js";
+document.addEventListener("DOMContentLoaded", () => {
+    // Select elements
+    const signUpBtnLink = document.querySelector(".signUpBtn-link");
+    const signInBtnLink = document.querySelector(".signInBtn-link");
+    const wrapper = document.querySelector(".wrapper");
+    const registerBtn = document.querySelector(".form-wrapper.sign-up button");
+    const loginBtn = document.querySelector(".form-wrapper.sign-in button");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const verifyEmailBtn = document.getElementById("verifyEmail");
   
-//     if (loggedInUser) {
-//       const user = JSON.parse(loggedInUser);
-//       welcomeMessage.innerText = `Hello, ${user.name}`;
-//       logoutButton.classList.remove("hidden");
-//     } else {
-//       welcomeMessage.innerText = "Hello";
-//       logoutButton.classList.add("hidden");
-//     }
-//   }
+    // Toggle between sign up and sign in forms
+    signUpBtnLink.addEventListener("click", () => {
+      wrapper.classList.add("active");
+    });
   
-//   // Logout function
-//   function logout() {
-//     localStorage.removeItem("loggedInUser");
-//     window.location.href = "login.html"; // Redirect to login page after logout
-//   }
+    signInBtnLink.addEventListener("click", () => {
+      wrapper.classList.remove("active");
+    });
   
-//   // Event listener for the logout button
-//   document.getElementById("logoutButton").addEventListener("click", logout);
   
-//   // Check login status when page loads
-//   checkLogin();
   
-//   // Register form submit event
-//   document.getElementById("registerForm").addEventListener("submit", async function (event) {
-//     event.preventDefault();
+    // Register function
+    const register = () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("signup-password").value;
   
-//     var username = document.getElementById("username").value;
-//     var email = document.getElementById("email").value.toLowerCase();
-//     var password = document.getElementById("password").value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log("User registered:", user);
+          // Optionally, send verification email
+          sendEmailVerification(auth.currentUser)
+            .then(() => {
+              console.log("Verification email sent");
+              // Inform the user about the verification email
+            })
+            .catch((error) => {
+              console.error("Error sending verification email:", error.message);
+            });
+        })
+        .catch((error) => {
+          console.error("Registration error:", error.message);
+        });
+    };
   
-//     // Store user data in local storage
-//     const user = {
-//       name: username,
-//       email: email,
-//       password: password, // Save as plain text to hash later on login
-//     };
-//     localStorage.setItem(email, JSON.stringify(user));
+    // Login function
+    const login = () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("register-password").value;
   
-//     // Store logged-in user
-//     localStorage.setItem("loggedInUser", JSON.stringify(user));
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log("Login successful:", user);
+        })
+        .catch((error) => {
+          console.error("Login error:", error.message);
+        });
+    };
   
-//     // Success Registration
-//     Swal.fire({
-//       icon: "success",
-//       title: "Registered successfully",
-//       showConfirmButton: false,
-//       timer: 1500,
-//     }).then(() => {
-//       window.location.href = "index.html"; // Redirect to home page after registration
-//     });
-//   });
+    // Logout function
+    const logout = () => {
+      signOut(auth)
+        .then(() => {
+          console.log("User logged out successfully");
+        })
+        .catch((error) => {
+          console.error("Logout error:", error.message);
+        });
+    };
   
-//   // Login form submit event
-//   document.getElementById("loginForm").addEventListener("submit", async function (event) {
-//     event.preventDefault();
+    // Attach event listeners
+    registerBtn.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent form submission
+      register();
+    });
   
-//     var email = document.getElementById("email").value.toLowerCase();
-//     var password = document.getElementById("password").value;
+    loginBtn.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent form submission
+      login();
+    });
   
-//     // Check user credentials
-//     const userData = localStorage.getItem(email);
-//     if (userData) {
-//       const user = JSON.parse(userData);
-//       if (user.password === password) {
-//         // Store logged-in user
-//         localStorage.setItem("loggedInUser", JSON.stringify(user));
-//         Swal.fire({
-//           icon: "success",
-//           title: "Login successful",
-//           showConfirmButton: false,
-//           timer: 1500,
-//         }).then(() => {
-//           window.location.href = "index.html"; // Redirect to home page after login
-//         });
-//       } else {
-//         Swal.fire({
-//           icon: "error",
-//           title: "Incorrect password",
-//           text: "Please check your password.",
-//         });
-//       }
-//     } else {
-//       Swal.fire({
-//         icon: "error",
-//         title: "User not found",
-//         text: "Please register first.",
-//       });
-//     }
-//   });
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", logout);
+    }
+  
+    if (verifyEmailBtn) {
+      verifyEmailBtn.addEventListener("click", () => {
+        sendEmailVerification(auth.currentUser)
+          .then(() => {
+            console.log("Verification email sent");
+          })
+          .catch((error) => {
+            console.error("Error sending verification email:", error.message);
+          });
+      });
+    }
+  
+    // Check user authentication state
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("User logged in:", user);
+      } else {
+        console.log("No user logged in");
+      }
+    });
+
+
+    // Logout functionality
+    document.addEventListener("DOMContentLoaded", () => {
+        const logoutBtn = document.getElementById("logoutBtn");
+        
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", () => {
+            signOut(auth)
+              .then(() => {
+                console.log("User logged out successfully");
+                // Optionally, you might want to redirect the user or update the UI
+                window.location.href = "../login/login.html"; // Redirect to login page after logout
+              })
+              .catch((error) => {
+                console.error("Logout error:", error.message);
+              });
+          });
+        }
+      });
+  });
   
