@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+  border-radius: 10px; /* Rounded corners */
+  padding: 40px; /* Padding inside the main */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  width: 400px; /* Fixed width for main container */
+  margin: auto; /* Center main horizontally */
+}
+
+h1 {
+  color: #eab73e; /* Header color */
+  margin-bottom: 30px; /* Space below the header */
+  text-align: center; /* Center text alignment */
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.8); /* Light background for input fields */
+  color: #333; /* Dark text color for better readability */
+  border: 1px solid #eab73e; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: none; /* Remove default shadow */
+  transition: border-color 0.3s; /* Smooth transition for border */
+}
+
+.form-control:focus {
+  border-color: #eab73e; /* Focused border color */
+  box-shadow: 0 0 0 0.2rem rgba(234, 183, 62, 0.25); /* Subtle glow effect on focus */
+}
+
+label {
+  color: #333; /* Label color */
+  font-weight: bold; /* Bold label text */
+}
+
+.checkbox label {
+  color: #333; /* Checkbox label color */
+}
+
+button {
+  background-color: #eab73e; /* Button color */
+  color: #000; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners for button */
+  padding: 12px; /* Increased padding for better appearance */
+  font-weight: bold; /* Bold button text */
+  transition: background-color 0.3s; /* Smooth transition for button */
+}
+
+button:hover {
+  background-color: #d4b13a; /* Darker yellow on hover */
+}
+
+@media (max-width: 480px) {
+  main {
+      width: 90%; /* Responsive width for small screens */
+      padding: 20px; /* Reduced padding */
+  }
+
+  h1 {
+      font-size: 1.5rem; /* Smaller font size for header */
+  }
+}
