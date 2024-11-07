@@ -1,20 +1,28 @@
 import {
   auth,
   createUserWithEmailAndPassword,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
-} from "./firebase.js"; // Corrected import statement
+  onAuthStateChanged,
+} from "./firebase.js";
 
 // Listen for auth state changes
 onAuthStateChanged(auth, (user) => {
+  const userDropdown = document.getElementById("userDropdown");
+  const authButtons = document.getElementById("authButtons");
+  const userName = document.getElementById("userIcon");
+
   if (user) {
     // User is signed in
-    const uid = user.uid;
-    console.log(uid);
-    console.log(user);
+    userName.innerText = `Welcome, ${
+      user.displayName || user.email.split("@")[0]
+    }`; // Display user's name or email
+    userDropdown.style.display = "block"; // Show user account dropdown
+    authButtons.style.display = "none"; // Hide sign up and sign in buttons
   } else {
-    console.log("User not signed in");
+    // No user signed in
+    userDropdown.style.display = "none"; // Hide user account dropdown
+    authButtons.style.display = "block"; // Show sign up and sign in buttons
   }
 });
 
@@ -23,13 +31,10 @@ let signUp = (event) => {
   let email = document.getElementById("signUpEmail");
   let password = document.getElementById("signUpPassword");
   let confirmPassword = document.getElementById("signUpConfirmPassword");
-  let fullName = document.getElementById("signUpFullName");
-  let phoneNumber = document.getElementById("signUpPhoneNumber");
 
   event.preventDefault();
 
   if (password.value !== confirmPassword.value) {
-    // Check if passwords match
     Swal.fire({
       title: "Oops!",
       text: "Your confirm password does not match your password",
@@ -40,73 +45,55 @@ let signUp = (event) => {
 
   createUserWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
-      // Signed up successfully
       const user = userCredential.user;
-      console.log("User signed up:", user);
-
-      // Clear the form fields after successful sign-up
-      email.value = "";
-      password.value = "";
-      confirmPassword.value = "";
-      fullName.value = "";
-      phoneNumber.value = "";
       Swal.fire({
         icon: "success",
         title: "Congratulations",
-        text: 'You are successfully signed up', 
+        text: "You are successfully signed up",
       });
+      window.location.href = "../Fashion 1/Fashion-1.html"; // Redirect after sign-up
     })
     .catch((error) => {
-      console.error("Error signing up:", error);
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: error.message, // Display the error message from Firebase
-      });
+      Swal.fire({ icon: "error", title: "Oops...", text: error.message });
     });
 };
 
-// Sign In Function
 let signIn = (event) => {
+  event.preventDefault(); // Prevent the form from submitting
+
   let email = document.getElementById("signInEmail");
   let password = document.getElementById("signInPassword");
 
-  event.preventDefault();
-
   signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
-      // Signed in successfully
       const user = userCredential.user;
-      console.log("User signed in:", user);
-
-      // Clear the form fields after successful sign-in
-      email.value = "";
-      password.value = "";
       Swal.fire({
         icon: "success",
         title: "Congratulations",
-        text: 'You are successfully signed in', 
+        text: "You are successfully signed in",
       });
+      window.location.href = "../Fashion 1/Fashion-1.html"; // Redirect after sign-in
     })
     .catch((error) => {
-      console.error("Error signing in:", error);
-      Swal.fire({
-        title: "Oops!",
-        text: "Invalid email or password",
-        icon: "error",
-      });
+      Swal.fire({ icon: "error", title: "Oops...", text: error.message });
     });
 };
 
 // Sign Out Handler
 let signOutHandler = () => {
-  signOut(auth) // Correct usage of signOut with auth
+  signOut(auth)
     .then(() => {
-      // Sign-out successful
       console.log("User signed out.");
+      const userIcon = document.getElementById("userIcon");
+      const userDropdown = document.getElementById("userDropdown");
+      const authButtons = document.getElementById("authButtons");
+
+      // Reset the UI after signing out
+      userIcon.innerText = "";
+      userDropdown.style.display = "none"; // Hide user dropdown
+      authButtons.style.display = "block"; // Show sign-up and sign-in buttons
     })
     .catch((error) => {
-      // An error happened during sign-out
       console.error("Error signing out:", error);
     });
 };
