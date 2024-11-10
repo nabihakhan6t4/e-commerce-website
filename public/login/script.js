@@ -1,111 +1,75 @@
-import {
-  auth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-} from "./firebase.js";
+import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "./firebase.js";
 
-// Listen for auth state changes
-onAuthStateChanged(auth, (user) => {
-  const userDropdown = document.getElementById("userDropdown");
-  const authButtons = document.getElementById("authButtons");
-  const userName = document.getElementById("userIcon");
+// Get the sign-up button element
+let signUpBtn = document.getElementById("signupBtn");
 
-  if (user) {
-    // User is signed in
-    userName.innerText = `Welcome, ${
-      user.displayName || user.email.split("@")[0]
-    }`; // Display user's name or email
-    userDropdown.style.display = "block"; // Show user account dropdown
-    authButtons.style.display = "none"; // Hide sign up and sign in buttons
-  } else {
-    // No user signed in
-    userDropdown.style.display = "none"; // Hide user account dropdown
-    authButtons.style.display = "block"; // Show sign up and sign in buttons
-  }
-});
+// Event listener for the sign-up button click
+signUpBtn.addEventListener("click", signUp);
 
-// Sign Up Function
-let signUp = (event) => {
-  let email = document.getElementById("signUpEmail");
-  let password = document.getElementById("signUpPassword");
-  let confirmPassword = document.getElementById("signUpConfirmPassword");
+function signUp(event) {
+  event.preventDefault(); // Prevent form from submitting
+  console.log("Sign-Up Button Clicked!"); // Debugging log to check if the button is clicked
 
-  event.preventDefault();
+  // Get the email, password, and display name input values
+  const email = document.getElementById("signupEmail").value.trim();
+  const password = document.getElementById("signupPassword").value.trim();
+  const displayName = document.getElementById("displayName").value.trim();
 
-  if (password.value !== confirmPassword.value) {
-    Swal.fire({
-      title: "Oops!",
-      text: "Your confirm password does not match your password",
-      icon: "info",
-    });
+  // Check if fields are empty
+  if (!email || !password || !displayName) {
+    Swal.fire("Error", "Please fill in all the fields.", "error");
     return;
   }
 
-  createUserWithEmailAndPassword(auth, email.value, password.value)
+  // Try signing up the user
+  createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      Swal.fire({
-        icon: "success",
-        title: "Congratulations",
-        text: "You are successfully signed up",
+      console.log("User signed up:", user);
+
+      // Update user's display name
+      user.updateProfile({
+        displayName: displayName,
+      }).then(() => {
+        // Successfully updated display name
+        console.log("Display name updated:", displayName);
+
+        Swal.fire("Success", "Signed up successfully!", "success");
+
+        // Redirect to homepage after a short delay
+        setTimeout(() => {
+          window.location.href = "../Fashion 1/Fashion-1.html"; // Adjust the URL if needed
+        }, 2000); // Delay for 2 seconds
+      }).catch((error) => {
+        // Handle any errors with updating the profile
+        console.error("Error updating profile:", error.message);
+        Swal.fire("Error", error.message, "error");
       });
-      window.location.href = "../Fashion 1/Fashion-1.html"; // Redirect after sign-up
     })
     .catch((error) => {
-      Swal.fire({ icon: "error", title: "Oops...", text: error.message });
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      // Handle sign-up errors
+      Swal.fire("Error", errorMessage, "error");
     });
+}
+
+// Handle user icon and display user data after login
+let userIcon = document.getElementById('user-icon');
+
+let userCheck = () => {
+  // Firebase Authentication state listener
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // If user is signed in, update the user icon with the user's display name
+      userIcon.innerHTML = user.displayName || "User"; // Fallback to "User" if no displayName is available
+    } else {
+      // If user is signed out, clear the user icon
+      userIcon.innerHTML = "";
+    }
+  });
 };
 
-let signIn = (event) => {
-  event.preventDefault(); // Prevent the form from submitting
-
-  let email = document.getElementById("signInEmail");
-  let password = document.getElementById("signInPassword");
-
-  signInWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      Swal.fire({
-        icon: "success",
-        title: "Congratulations",
-        text: "You are successfully signed in",
-      });
-      window.location.href = "../Fashion 1/Fashion-1.html"; // Redirect after sign-in
-    })
-    .catch((error) => {
-      Swal.fire({ icon: "error", title: "Oops...", text: error.message });
-    });
-};
-
-// Sign Out Handler
-let signOutHandler = () => {
-  signOut(auth)
-    .then(() => {
-      console.log("User signed out.");
-      const userIcon = document.getElementById("userIcon");
-      const userDropdown = document.getElementById("userDropdown");
-      const authButtons = document.getElementById("authButtons");
-
-      // Reset the UI after signing out
-      userIcon.innerText = "";
-      userDropdown.style.display = "none"; // Hide user dropdown
-      authButtons.style.display = "block"; // Show sign-up and sign-in buttons
-    })
-    .catch((error) => {
-      console.error("Error signing out:", error);
-    });
-};
-
-// Add Event Listener for Sign Up Button
-let signupBtn = document.getElementById("signupBtn");
-signupBtn.addEventListener("click", signUp);
-
-// Add Event Listener for Sign In Button
-let signInBtn = document.getElementById("signInBtn");
-signInBtn.addEventListener("click", signIn);
-
-// Add Event Listener for Sign Out Button
-let signOutBtn = document.getElementById("signOut");
-signOutBtn.addEventListener("click", signOutHandler);
+// Call userCheck when page loads to check if user is logged in
+userCheck();
