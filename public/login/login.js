@@ -75,22 +75,3 @@ signInBtn.addEventListener("click", (event) => {
     });
 });
 
-
-// Handle user icon and display user data after login
-let userIcon = document.getElementById("user-icon");
-
-let userCheck = () => {
-  // Firebase Authentication state listener
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // If user is signed in, update the user icon with the user's display name
-      userIcon.innerHTML = user.displayName || "User"; // Fallback to "User" if no displayName is available
-    } else {
-      // If user is signed out, clear the user icon
-      userIcon.innerHTML = "";
-    }
-  });
-};
-
-// Call userCheck when page loads to check if user is logged in
-userCheck();

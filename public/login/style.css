@@ -1,11 +1,19 @@
+
+@font-face {
+  font-family: 'light';
+  src: url(../FONTS/Helvetica.ttf);
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'light';
 }
 
 main {
-  background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
   border-radius: 10px; /* Rounded corners */
   padding: 40px; /* Padding inside the main */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
@@ -20,7 +28,6 @@ h1 {
 }
 
 .form-control {
-  background: rgba(255, 255, 255, 0.8); /* Light background for input fields */
   color: #333; /* Dark text color for better readability */
   border: 1px solid #eab73e; /* Border color */
   border-radius: 5px; /* Rounded corners */
@@ -58,11 +65,23 @@ button:hover {
 
 @media (max-width: 480px) {
   main {
-      width: 90%; /* Responsive width for small screens */
-      padding: 20px; /* Reduced padding */
+    width: 90%; /* Responsive width for small screens */
+    padding: 20px; /* Reduced padding */
   }
 
   h1 {
-      font-size: 1.5rem; /* Smaller font size for header */
+    font-size: 1.5rem; /* Smaller font size for header */
   }
+}
+
+.footer-color {
+  background: #ebebeb;
+}
+.hover-effect:hover {
+  color: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }

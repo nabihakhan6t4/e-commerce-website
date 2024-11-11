@@ -13,7 +13,7 @@
   scroll-behavior: smooth;
  }
 body {
-  background-color: #f4f4f4; /* Light background for contrast */
+ 
   color: #333; /* Darker text color */
 }
 
@@ -803,6 +803,7 @@ body {
   );
   color: #fff !important;
 }
+
 
 .icon-cart span {
   font-size: 0.75rem;
