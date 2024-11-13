@@ -1,75 +1,139 @@
-import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "./firebase.js";
+import { auth, createUserWithEmailAndPassword, signOut } from "./firebase.js";
 
-// Get the sign-up button element
-let signUpBtn = document.getElementById("signupBtn");
+let btn = document.getElementById("signupBtn");
+let signOutBtn = document.getElementById("signOut");
 
-// Event listener for the sign-up button click
-signUpBtn.addEventListener("click", signUp);
+let signUp = () => {
+  let email = document.getElementById("signupEmail").value;
+  let password = document.getElementById("signupPassword").value;
+  let fullName = document.getElementById("displayName").value;
+  let phoneNumber = document.getElementById("phoneNumber").value;
+  let isConfirmed = document.getElementById("signUpConfirmPassword").value;
 
-function signUp(event) {
-  event.preventDefault(); // Prevent form from submitting
-  console.log("Sign-Up Button Clicked!"); // Debugging log to check if the button is clicked
+  // Regex for password validation (at least 8 characters, 1 uppercase, 1 number, 1 special character)
+  var regexPassword =
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-  // Get the email, password, and display name input values
-  const email = document.getElementById("signupEmail").value.trim();
-  const password = document.getElementById("signupPassword").value.trim();
-  const displayName = document.getElementById("displayName").value.trim();
-
-  // Check if fields are empty
-  if (!email || !password || !displayName) {
-    Swal.fire("Error", "Please fill in all the fields.", "error");
+  // Check if any field is empty
+  if (!email || !password || !fullName || !phoneNumber || !isConfirmed) {
+    Swal.fire("Error", "Please fill in all fields.", "error");
     return;
   }
 
-  // Try signing up the user
+  // Check if passwords match
+  if (password !== isConfirmed) {
+    Swal.fire("Error", "Passwords do not match.", "error");
+    return;
+  }
+
+  // Check if password matches the regex pattern
+  if (!regexPassword.test(password)) {
+    Swal.fire(
+      "Error",
+      "Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 special character.",
+      "error"
+    );
+    return;
+  }
+
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      // Signed up successfully
       const user = userCredential.user;
-      console.log("User signed up:", user);
 
-      // Update user's display name
-      user.updateProfile({
-        displayName: displayName,
-      }).then(() => {
-        // Successfully updated display name
-        console.log("Display name updated:", displayName);
+      // Show success message
+      Swal.fire(
+        "Success",
+        "Congratulations, you have signed up successfully!",
+        "success"
+      );
 
-        Swal.fire("Success", "Signed up successfully!", "success");
-
-        // Redirect to homepage after a short delay
-        setTimeout(() => {
-          window.location.href = "../Fashion 1/Fashion-1.html"; // Adjust the URL if needed
-        }, 2000); // Delay for 2 seconds
-      }).catch((error) => {
-        // Handle any errors with updating the profile
-        console.error("Error updating profile:", error.message);
-        Swal.fire("Error", error.message, "error");
-      });
+      // Redirect to homepage after 2 seconds
+      setTimeout(() => {
+        window.location.href = "../Fashion 1/Fashion-1.html"; // Adjust the URL if needed
+      }, 2000); // Delay for 2 seconds
     })
     .catch((error) => {
+      // Handle errors
       const errorCode = error.code;
       const errorMessage = error.message;
-
-      // Handle sign-up errors
-      Swal.fire("Error", errorMessage, "error");
+      Swal.fire(
+        "Error",
+        errorMessage, // Display the error message returned from Firebase
+        "error"
+      );
+      console.log(error);
     });
-}
-
-// Handle user icon and display user data after login
-let userIcon = document.getElementById('user-icon');
-
-let userCheck = () => {
-  // Firebase Authentication state listener
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // If user is signed in, update the user icon with the user's display name
-      userIcon.innerHTML = user.displayName || "User"; // Fallback to "User" if no displayName is available
-    } else {
-      // If user is signed out, clear the user icon
-      userIcon.innerHTML = "";
-    }
-  });
 };
 
-// Call userCheck when page loads to check if user is logged in
-userCheck();
+let signout = () => {
+  signOut(auth)
+    .then(() => {
+      // Signed out successfully
+      Swal.fire("Success", "Signed out successfully!", "success"); // Success alert
+
+      // Redirect to login page after 2 seconds
+      setTimeout(() => {
+        window.location.href = "./login.html"; // Adjust the URL for the login page if needed
+      }, 2000); // Delay for 2 seconds
+    })
+    .catch((error) => {
+      // Handle sign-out error
+      Swal.fire(
+        "Error",
+        "Something went wrong during sign-out. Please try again.",
+        "error"
+      );
+      console.log(error);
+    });
+};
+
+btn.addEventListener("click", signUp);
+signOutBtn.addEventListener("click", signout);
+
+
+
+
+// Selecting the custom cursor elements
+let cursor = document.querySelector(".cursor");
+let cursor2 = document.querySelector(".cursor2");
+
+// Mousemove event to update cursor position
+if (cursor && cursor2) {
+  document.addEventListener("mousemove", function (e) {
+    // Updating the position of the custom cursors based on mouse position
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+    cursor2.style.left = e.clientX + "px";
+    cursor2.style.top = e.clientY + "px";
+  });
+}
+
+
+// Scroll progress bar functionality
+let calcScrollValue = () => {
+    let scrollProgress = document.getElementById("progress");
+    let scrollPercentage = document.getElementById("scroll-percentage"); // Target the percentage span
+    let pos = document.documentElement.scrollTop;
+    let calcHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    let scrollValue = Math.round((pos * 100) / calcHeight);
+  
+    if (pos > 100) {
+      scrollProgress.style.display = "grid"; // Show scroll progress bar when scrolling
+    } else {
+      scrollProgress.style.display = "none"; // Hide scroll progress bar when near the top
+    }
+  
+    scrollProgress.addEventListener("click", () => {
+      document.documentElement.scrollTop = 0; // Scroll back to top when clicked
+    });
+  
+    // Update the scroll progress with conic-gradient
+    scrollProgress.style.background = `conic-gradient(#03012e ${scrollValue}%, #01c7f6 ${scrollValue}%)`;
+  };
+  
+  // Call scroll value calculation on scroll and load
+  window.onscroll = calcScrollValue;
+  window.onload = calcScrollValue;

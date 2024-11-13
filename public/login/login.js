@@ -2,7 +2,8 @@ import {
   auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut
 } from "./firebase.js";
 
 // Get the sign-in button element
@@ -58,7 +59,7 @@ signInBtn.addEventListener("click", (event) => {
         }).then((result) => {
           if (result.isConfirmed) {
             // Redirect to sign-up page when the user clicks "Go to Sign Up"
-            window.location.href = "/signup.html"; // Make sure the path is correct
+            window.location.href = "../login/register.html"; // Adjust path if needed
           }
         });
       } else if (errorCode === "auth/invalid-credential") {
@@ -75,3 +76,13 @@ signInBtn.addEventListener("click", (event) => {
     });
 });
 
+let userIcon = document.getElementById("user-icon");
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // Display the logged-in user's email
+    userIcon.innerText = `Welcome, ${user.email}`;
+  } else {
+    // Display default text for signed-out users
+    userIcon.innerText = "Welcome, user";
+  }
+});
