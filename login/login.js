@@ -3,7 +3,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut
+  signOut,
+  deleteUser,
 } from "./firebase.js";
 
 // Get the sign-in button element
@@ -86,3 +87,75 @@ onAuthStateChanged(auth, (user) => {
     userIcon.innerText = "Welcome, user";
   }
 });
+
+let signOutBtn = document.getElementById("signOut");
+
+let signout = () => {
+  // Check if the user is authenticated
+  const user = auth.currentUser;
+
+  if (user) {
+    // User is signed in, proceed with sign out
+    signOut(auth)
+      .then(() => {
+        // Signed out successfully
+        Swal.fire("Success", "Signed out successfully!", "success");
+
+        // Redirect to login page after 2 seconds
+        setTimeout(() => {
+          window.location.href = "../login/login.html"; // Adjust the URL for the login page if needed
+        }, 4000); // Delay for 4 seconds
+      })
+      .catch((error) => {
+        // Handle sign-out error
+        Swal.fire(
+          "Error",
+          "Something went wrong during sign-out. Please try again.",
+          "error"
+        );
+        console.log(error);
+      });
+  } else {
+    // No user is signed in
+    Swal.fire("Error", "No user is currently signed in.", "error");
+  }
+};
+
+signOutBtn.addEventListener("click", signout);
+
+let dltBtn = document.getElementById("dltAccount");
+
+let deleteuser = () => {
+  // Get the current authenticated user
+  const user = auth.currentUser;
+
+  if (user) {
+    // Proceed with deleting the user
+    deleteUser(user)
+      .then(() => {
+        console.log("User deleted successfully");
+
+        // Success alert
+        Swal.fire("Success", "Account deleted successfully!", "success");
+
+        // Redirect to the login page after 2 seconds
+        setTimeout(() => {
+          window.location.href = "../index.html"; // Adjust the URL for the login page if needed
+        }, 4000);
+      })
+      .catch((error) => {
+        // Handle error
+        Swal.fire(
+          "Error",
+          "Something went wrong during account deletion. Please try again.",
+          "error"
+        );
+        console.log(error);
+      });
+  } else {
+    // No user is logged in
+    Swal.fire("Error", "No user is currently logged in.", "error");
+  }
+};
+
+dltBtn.addEventListener("click", deleteuser);
