@@ -5,6 +5,9 @@ import {
   onAuthStateChanged,
   signOut,
   deleteUser,
+  signInWithPopup,
+  googleProvider,
+  GoogleAuthProvider,
 } from "./firebase.js";
 
 // Get the sign-in button element
@@ -77,16 +80,6 @@ signInBtn.addEventListener("click", (event) => {
     });
 });
 
-let userIcon = document.getElementById("user-icon");
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // Display the logged-in user's email
-    userIcon.innerText = `Welcome, ${user.email}`;
-  } else {
-    // Display default text for signed-out users
-    userIcon.innerText = "Welcome, user";
-  }
-});
 
 let signOutBtn = document.getElementById("signOut");
 
@@ -159,3 +152,38 @@ let deleteuser = () => {
 };
 
 dltBtn.addEventListener("click", deleteuser);
+
+let googleBtn = document.getElementById("googleBtn");
+
+let loginWithGoogle = () => {
+  signInWithPopup(auth, googleProvider)
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // IdP data available using getAdditionalUserInfo(result)
+      console.log("token", token);
+      console.log("user", user);
+
+      Swal.fire("Success", "Signed in successfully!", "success"); // Success alert
+
+      // Redirect to homepage after 2 seconds
+      setTimeout(() => {
+        window.location.href = "../Fashion 1/Fashion-1.html"; // Adjust the URL if needed
+      }, 2000); // Delay for 2 seconds
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+      console.log("errorCode", errorCode, credential);
+    });
+};
+
+googleBtn.addEventListener("click", loginWithGoogle);
